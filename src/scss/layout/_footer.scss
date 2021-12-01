@@ -1,4 +1,15 @@
 .footer {
-  @include tablet {
+  background-color: #ffffff;
+  text-align: center;
+  &__text {
+    font-family: $principal-font;
+    font-size: 14px;
+    color: #6b6b6b;
   }
+  &__logo {
+    width: 103px;
+    height: 40px;
+  }
+  /*@include tablet {
+  }*/
 }
