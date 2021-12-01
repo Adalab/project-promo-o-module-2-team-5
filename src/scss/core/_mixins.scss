@@ -1,0 +1,17 @@
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin text($family, $size, $trans, $color) {
+  font-family: $family;
+  font-size: $size;
+  text-transform: $trans;
+  color: $color;
+}

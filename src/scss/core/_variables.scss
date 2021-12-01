@@ -1,14 +1,4 @@
-// fonts
-$font-main: "Roboto", sans-serif;
-
-// mixins
-@mixin tablet {
-  @media (min-width: 768px) {
-    @content;
-  }
-}
-@mixin desktop {
-  @media (min-width: 1200) {
-    @content;
-  }
-}
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1200px;
+$principal-font: 'Open Sans', sans-serif;
+$principal-font-semibold: 'Open Sans', sans-serif;
