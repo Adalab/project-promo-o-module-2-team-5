@@ -1,2 +1,9 @@
 .header {
+  background-color: #f5f5f5;
+  text-align: center;
+  margin-top: 95px;
+  &__img {
+    width: 250px;
+    height: 63px;
+  }
 }
