@@ -1,4 +1,7 @@
-.main {
-  @include tablet {
-  }
+.container {
+  margin: 0px 20px;
 }
+.body {
+  width: 100vh;
+}
+
