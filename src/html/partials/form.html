@@ -1,0 +1,86 @@
+<section class="section_form">
+  <include
+    src="./bar_colapsable.html"
+    firstIcon=" "
+    title="Diseña"
+    lastIcon=" "
+  ></include>
+
+  <form action="#" class="">
+    <fieldset>
+      <include
+        src="./bar_colapsable.html"
+        firstIcon=" "
+        title="Rellena"
+        lastIcon=" "
+      ></include>
+
+      <div class="">
+        <label for="name" class="label">Nombre completo</label>
+        <input
+          type="text"
+          placeholder="Ej: sally jill"
+          name="name"
+          id="name"
+          class="input"
+          value=""
+          required
+        />
+        <label for="job" class="label">Puesto</label>
+        <input
+          type="text"
+          placeholder="Ej: Front-end unicorn"
+          name="job"
+          id="job"
+          class="input"
+          required
+        />
+
+        <label for="image" class="label">Imagen de perfil</label>
+        <div class="">
+          <label class="">Añadir Imagen</label>
+          <input type="file" name="photo" id="photo" class="" required />
+        </div>
+
+        <label for="email" class="label">Email</label>
+        <input
+          type="email"
+          placeholder="Ej: sally-hill@gmail.com "
+          name="email"
+          id="email"
+          class="input"
+          required
+        />
+
+        <label for="phone" class="label">Teléfono</label>
+        <input
+          type="tel"
+          placeholder="Ej: 555-55-55-55"
+          pattern=""
+          name="phone"
+          id="phone"
+          class="input"
+          required
+        />
+        <label for="linkedin" class="label">Linkedin</label>
+        <input
+          type="text"
+          placeholder="Ej: linkedin.com/in/sally.hill"
+          name="linkedin"
+          id="linkedin"
+          class="input"
+          required
+        />
+        <label for="github" class="label">Github</label>
+        <input
+          type="text"
+          placeholder="Ej: @sally-hill"
+          name="github"
+          id="github"
+          class="input js_input_link"
+          required
+        />
+      </div>
+    </fieldset>
+  </form>
+</section>
