@@ -1,0 +1,132 @@
+.containerdesign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: $lettercolor;
+  text-transform: uppercase;
+  font-family: $principal-font;
+  padding: 27px 0 7px;
+  border-bottom: 1px solid #d8d8d8;
+
+  & .design {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+
+    & .icontitle {
+      display: flex;
+    }
+
+    & .far,
+    & .fas {
+      font-size: 18px;
+
+      &.fa-object-ungroup {
+        padding-right: 10px;
+      }
+    }
+
+    & .designtitle {
+      font-size: 18px;
+      font-weight: 600;
+      padding-bottom: 22px;
+    }
+
+    & .fa-chevron-up,
+    & .fa-chevron-down {
+      color: $lettercolor;
+    }
+  }
+
+  & .paletteandcolours {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+
+    & .colourstitle {
+      font-size: 14px;
+      padding-left: 19px;
+    }
+
+    & .colours {
+      display: flex;
+
+      & .palettes {
+        display: flex;
+        flex-direction: column;
+
+        #colours1,
+        #colours2,
+        #colours3 {
+          margin: 4px 10px 24px 0;
+          height: 17px;
+          width: 17px;
+        }
+      }
+
+      .palettescolours {
+        display: flex;
+        flex-direction: column;
+        .colours1,
+        .colours2,
+        .colours3 {
+          display: flex;
+
+          .palette1 {
+            width: 30px;
+            height: 25px;
+            margin-bottom: 20px;
+
+            &.colour1 {
+              background: #114e4e;
+            }
+
+            &.colour2 {
+              background: #438792;
+            }
+
+            &.colour3 {
+              background: #a2deaf;
+            }
+          }
+
+          .palette2 {
+            width: 30px;
+            height: 25px;
+            margin-bottom: 20px;
+
+            &.colour1 {
+              background: #420101;
+            }
+
+            &.colour2 {
+              background: #bd1010;
+            }
+
+            &.colour3 {
+              background: #e95626;
+            }
+          }
+
+          .palette3 {
+            width: 30px;
+            height: 25px;
+
+            &.colour1 {
+              background: #3e5b65;
+            }
+
+            &.colour2 {
+              background: #eab052;
+            }
+
+            &.colour3 {
+              background: #a0c0cf;
+            }
+          }
+        }
+      }
+    }
+  }
+}
