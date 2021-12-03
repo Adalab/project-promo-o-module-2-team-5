@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Awesome profile-cards</title>
+    <!--externals -->
+    <script
+      src="https://kit.fontawesome.com/80c9b8179a.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- internals -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="icon" href="./assets/images/favicon.png" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Awesome profile-cards</title>
-  <!--externals -->
-  <script src="https://kit.fontawesome.com/80c9b8179a.js" crossorigin="anonymous"></script>
-  <!-- internals -->
-  <link rel="stylesheet" href="./assets/css/main.css" />
-  <link rel="icon" href="./assets/images/favicon.png" />
+  <body>
+    <include
+      header="headerCard"
+      src="./partials/header.html"
+      img="imgCard"
+    ></include>
 
-</head>
+    <main>
+      <include src="./partials/create_card_hero.html"></include>
+      <include src="./partials/design.html"></include>
+      <include src="./partials/form.html"></include>
+      <include src="./partials/share.html"></include>
+    </main>
 
-<body>
-  <include header="headerCard" src="./partials/header.html" img="imgCard"></include>
-
-  <main>
-    <include src="./partials/create_card_hero.html"></include>
-    <include src="./partials/design.html"></include>
-    <include src="./partials/form.html"></include>
-    <include src="./partials/share.html"></include>
-  </main>
-
-  <include src="./partials/footer.html"></include>
-  <script src="./assets/js/main.js"></script>
-</body>
-
+    <include src="./partials/footer.html"></include>
+    <script src="./assets/js/main.js"></script>
+  </body>
 </html>
