@@ -7,10 +7,15 @@
   text-align: center;
   padding: 38px 0 40px 0;
 }
-.card__reset {
+.card_reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 30px;
+  width: 75px;
   margin-bottom: 20px;
-  margin-left: 45px;
+  margin-right: 180px;
+  background-color: #bfcdd0;
   border: 1px solid white;
   border-radius: 15px;
   text-transform: uppercase;
@@ -19,12 +24,13 @@
   cursor: pointer;
   color: #54585a;
 
-  &--icon {
+  &__icon {
     padding-right: 5px;
     padding-left: 2px;
+   
   }
+ 
 }
-
 .card__preview {
   width: fit-content;
   min-width: 260px;
