@@ -1,19 +1,30 @@
 .footer {
+  display: flex;
+  flex-direction: column;
   background-color: #ffffff;
-  text-align: center;
+  align-items: center;
   border-top: 1px solid #d8d8d8;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
   &__text {
     font-family: $principal-font;
     font-size: 14px;
     color: #6b6b6b;
     margin-bottom: 12px;
     margin-top: 18px;
+    @media (min-width: 768px) {
+      margin-bottom: 22px;
+      margin-left: 41px;
+    }
   }
   &__logo {
     width: 103px;
     height: 40px;
     margin-bottom: 20px;
+    @media (min-width: 768px) {
+      margin: 10px 40px 10px 0px;
+    }
   }
-  /*@include tablet {
-  }*/
 }
