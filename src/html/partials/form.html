@@ -14,68 +14,69 @@
   >
     <fieldset>
       <div class="">
-        <label for="name" class="label">Nombre completo</label>
+        <label for="name" class="form__label">Nombre completo</label>
         <input
           type="text"
-          placeholder="Ej: sally jill"
-          name="name"
+          placeholder="Ej: Sally Jill"
+          name="full_name"
           id="name"
-          class="input"
+          class="form__input"
           value=""
           required
         />
-        <label for="job" class="label">Puesto</label>
+        <label for="job" class="form__label">Puesto</label>
         <input
           type="text"
           placeholder="Ej: Front-end unicorn"
           name="job"
           id="job"
-          class="input"
+          class="form__input"
           required
         />
 
-        <label for="image" class="label">Imagen de perfil</label>
-        <div class="">
-          <label class="">Añadir Imagen</label>
-          <input type="file" name="photo" id="photo" class="" required />
+        <label for="image" class="form__label">Imagen de perfil</label>
+        <div class="form__image-section">
+          <label class="form__image-section--add">Añadir imagen</label>
+          <div class="form__image-section--preview"></div>
+          <!-- <input type="file" name="photo" id="photo" class="" required /> -->
         </div>
 
-        <label for="email" class="label">Email</label>
+        <label for="email" class="form__label">Email</label>
         <input
           type="email"
           placeholder="Ej: sally-hill@gmail.com "
           name="email"
           id="email"
-          class="input"
+          class="form__input"
           required
         />
 
-        <label for="phone" class="label">Teléfono</label>
+        <label for="phone" class="form__label">Teléfono</label>
         <input
           type="tel"
           placeholder="Ej: 555-55-55-55"
           pattern=""
           name="phone"
           id="phone"
-          class="input"
+          class="form__input"
           required
         />
-        <label for="linkedin" class="label">Linkedin</label>
+        <label for="linkedin" class="form__label">Linkedin</label>
         <input
           type="text"
           placeholder="Ej: linkedin.com/in/sally.hill"
           name="linkedin"
           id="linkedin"
-          class="input"
+          class="form__input"
           required
         />
-        <label for="github" class="label">Github</label>
+        <label for="github" class="form__label">Github</label>
         <input
           type="text"
           placeholder="Ej: @sally-hill"
           name="github"
           id="github"
-          class="input"
+          class="form__input"
           required
         />
       </div>
