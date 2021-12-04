@@ -12,6 +12,7 @@
     display: flex;
     justify-content: space-between;
     width: 100vw;
+    padding-left: 20px;
 
     & .icontitle {
       display: flex;
@@ -35,6 +36,7 @@
     & .fa-chevron-up,
     & .fa-chevron-down {
       color: $lettercolor;
+      padding-right: 20px;
     }
   }
 
@@ -42,10 +44,11 @@
     display: flex;
     justify-content: space-between;
     width: 100vw;
+    padding-right: 20px;
 
     & .colourstitle {
       font-size: 14px;
-      padding-left: 19px;
+      padding-left: 39px;
     }
 
     & .colours {
