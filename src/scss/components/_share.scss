@@ -1,7 +1,153 @@
-// .container {
-//     margin: 0px 20px;
-//     background-color: darkgray;
-//   }
-//   .body {
-//     width: 100vh;
-//   }
+.titleShare {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+
+  &__title {
+    font-family: $principal-font;
+    color: $lettercolor;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  &__titleIcon {
+    display: flex;
+
+    & .fas {
+      font-size: 18px;
+      color: $iconscolor;
+      &.fa-share-alt {
+        padding-right: 10px;
+      }
+    }
+  }
+  & .fa-chevron-up,
+  & .fa-chevron-down {
+    color: $lettercolor;
+    font-size: 18px;
+  }
+}
+
+.containerButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #d8d8d8;
+
+  .buttonCard {
+    display: flex;
+    padding: 20px;
+    border: $iconscolor;
+    border-radius: 20px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+    background-color: $iconscolor;
+    font-family: $principal-font;
+    margin-bottom: 30px;
+
+    &__title {
+      text-transform: uppercase;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      padding-left: 10px;
+      padding-right: 15px;
+    }
+    & .far {
+      font-size: 22px;
+      color: white;
+      &.fa-address-card {
+        padding-right: 15px;
+      }
+    }
+  }
+}
+
+// SE DUPLICA EL BOTON HASTA QUE METAMOS JAVA añadiendo GREY a la clase
+
+.containerButton-grey {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #d8d8d8;
+
+  .buttonCard-grey {
+    display: flex;
+    padding: 20px;
+    border: #d5d5d5;
+    border-radius: 20px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+    background-color: #d5d5d5;
+    font-family: $principal-font;
+    margin-bottom: 30px;
+
+    &__title {
+      text-transform: uppercase;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      padding-left: 10px;
+      padding-right: 15px;
+    }
+    & .far {
+      font-size: 22px;
+      color: white;
+      &.fa-address-card {
+        padding-right: 15px;
+      }
+    }
+  }
+}
+
+////// TERMINA AQUI
+
+.createdCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: 1.5;
+
+  &__title {
+    color: $lettercolor;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: $principal-font;
+    text-align: 1.5;
+    margin-bottom: 6px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $iconscolor;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: $principal-font;
+    text-align: 1.5;
+    margin-bottom: 10px;
+  }
+
+  &__buttonTwitter {
+    color: white;
+    display: flex;
+    padding: 10px;
+    border: rgb(49, 165, 233);
+    border-radius: 5px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+    background-color: rgb(49, 165, 233);
+    font-family: $principal-font;
+    font-size: 18px;
+    margin-bottom: 30px;
+
+    .buttonLink {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      padding-left: 10px;
+    }
+  }
+}
