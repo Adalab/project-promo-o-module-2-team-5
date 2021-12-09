@@ -9,11 +9,14 @@
   border-bottom: 1px solid #d8d8d8;
   padding-bottom: -20px;
 
+  @include tablet {
+    padding-top: 7px;
+  }
+
   & .design {
     display: flex;
     justify-content: space-between;
-    width: 100vw;
-    padding-left: 20px;
+    width: 100%;
 
     & .icontitle {
       display: flex;
@@ -38,23 +41,22 @@
     & .fa-chevron-up,
     & .fa-chevron-down {
       color: $lettercolor;
-      padding-right: 20px;
     }
   }
 
   & .paletteandcolours {
     display: flex;
     justify-content: space-between;
-    width: 100vw;
-    padding-right: 20px;
+    width: 100%;
 
     & .colourstitle {
       font-size: 14px;
-      padding-left: 39px;
+      padding-left: 19px;
     }
 
     & .colours {
       display: flex;
+      padding-top: 6px;
 
       & .palettes {
         display: flex;

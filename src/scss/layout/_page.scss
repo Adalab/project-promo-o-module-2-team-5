@@ -1,5 +1,8 @@
 .container {
   margin: 0px 20px;
+  @include tablet {
+    margin: 0 30px 0 20px;
+  }
 }
 
 .body-landing {
@@ -13,4 +16,17 @@
 
 .background_features {
   background: linear-gradient(to bottom, #f5f5f5, white);
+  @include tablet {
+    width: 100%;
+  }
+}
+
+@include tablet {
+  .create_card_main {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 23px 40px 21px 20px;
+    background: linear-gradient(to bottom, #f5f5f5, white);
+  }
 }
