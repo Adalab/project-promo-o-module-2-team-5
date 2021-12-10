@@ -4,6 +4,9 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  @include tablet {
+    height: 50vh;
+  }
 
 
 &__section--title {
@@ -13,14 +16,21 @@
   font-weight: bold;
   line-height: normal;
   padding-top: 35.4px;
+  @include tablet {
+    font-size: 24px;
+      padding-top: 31px;
+  }
 }
 &__section--text {
   font-family: $principal-font;
   font-size: 12.8px;
   color: #114e4e;
   line-height: normal;
-
   margin: 0 28px 17.8px 28px;
+  @include tablet {
+    font-size: 16px;
+      margin: 0 218px 27px 218px;
+  }
 }
 }
 .nav-container {
@@ -31,6 +41,14 @@
   margin-left: 25.6px;
   margin-right: 26.4px;
   margin-bottom: 38.6px;
+  @include tablet {
+    width: 325px;
+    height: 86px;
+    margin-left: 222px;
+    margin-right: 221px;
+    margin-bottom: 186px;
+  }
+
 
 
 &__list {
@@ -42,6 +60,11 @@
   font-family: $principal-font;
   font-size: 12.8px;
   color: #54585a;
+  @include tablet {
+    width: 325px;
+    height: 86px;
+    font-size: 16px;
+  }
 }
 }
 .list-desing {
