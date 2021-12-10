@@ -21,6 +21,10 @@
   }
 }
 
+.collapsed {
+  display: none;
+}
+
 @include tablet {
   .create_card_main {
     display: flex;
