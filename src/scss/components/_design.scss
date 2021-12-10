@@ -41,6 +41,10 @@
     & .fa-chevron-up,
     & .fa-chevron-down {
       color: $lettercolor;
+
+      &.collapsed {
+        display: none;
+      }
     }
   }
 
@@ -48,6 +52,10 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    &.collapsed {
+      display: none;
+    }
 
     & .colourstitle {
       font-size: 14px;
