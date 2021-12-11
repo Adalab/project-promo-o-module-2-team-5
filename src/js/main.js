@@ -167,3 +167,18 @@ function handler(){
 paletteButtons.forEach(radio => {
   radio.addEventListener ('change', handler);
 });
+
+
+//----------------------------------------------------------------------//
+//---PARA SELECCIONAR CREAR TARJETA (CAMBIO COLOR y MOSTRAR EL RESTO---//
+
+const shareButton = document.querySelector('.js-buttonCard');
+const createdCard = document.querySelector('.js-createdCard');
+
+function handleClickButton() {
+  shareButton.classList.add('buttonCard--off');
+  shareButton.classList.remove('buttonCard--on');
+  createdCard.classList.remove('collapsed');
+}
+
+shareButton.addEventListener('click', handleClickButton);
