@@ -157,8 +157,8 @@ function handler(){
     colorLight = '#a0c0cf';
   }
 
-  previewHeaderStrip.style.borderColor = colorDark;
-  previewName.style.color = colorMedium;
+  previewHeaderStrip.style.borderColor = colorMedium;
+  previewName.style.color = colorDark;
   previewJob.style.color = colorLight;
 }
 
