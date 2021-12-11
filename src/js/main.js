@@ -145,3 +145,49 @@ inputGithub.addEventListener('keyup', handleGithubInput);
 // }
 
 // inputName.addEventListener('keyup', handleDataInput);
+
+
+//----------------PARA SELECCIONAR LA PALETA----------------------------//
+
+const previewHeaderStrip = document.querySelector ('.js-card-preview-header');
+
+
+
+//seleciono el atributo comun para poder coger todos los radiobuttons
+const paletteButtons = document.querySelectorAll ('.js-sectionDesign input[name=colourpalette]');
+
+
+// funcion que coge el valor del radiobutton seleccionado
+function handler(){
+
+  const selectedPalette = document.querySelector('.js-sectionDesign input[name=colourpalette]:checked').value;
+  let colorDark;
+  let colorMedium;
+  let colorLight;
+  
+  if (selectedPalette === 'colours1') {
+    colorDark = '#114e4e';
+    colorMedium = '#438792';
+    colorLight = '#a2deaf';
+
+  }else if (selectedPalette === 'colours2'){
+    colorDark = '#420101';
+    colorMedium = '#bd1010';
+    colorLight = '#e95626';
+
+  } else if (selectedPalette === 'colours3'){
+    colorDark = '#3e5b65';
+    colorMedium = '#eab052';
+    colorLight = '#a0c0cf';
+  }
+ 
+  previewHeaderStrip.style.borderColor = colorDark;
+  previewName.style.color = colorMedium;
+  previewJob.style.color = colorLight;
+}
+
+
+//evento de cambio de cada uno de los radiobuttons
+paletteButtons.forEach(radio => {
+  radio.addEventListener ('change', handler)
+});

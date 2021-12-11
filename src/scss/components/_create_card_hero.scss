@@ -6,6 +6,10 @@
   align-items: center;
   text-align: center;
   padding: 38px 0 40px 0;
+  @media tablet {
+    border-radius: 15px;
+  
+  }
 }
 .card_reset {
   display: flex;
