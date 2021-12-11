@@ -22,10 +22,18 @@ const sectionShare = document.querySelector('.js-sectionShare');
 /*  -----------------------------------------------------------------  */
 
 //DISEÑO (ARROW)
+
+const arrowDownDesign = document.querySelector('.js-arrowdown-design');
+const arrowUpDesign = document.querySelector('.js-arrowup-design');
+const arrowDownFill = document.querySelector('.js-arrowdown-fill');
+const arrowUpFill = document.querySelector('.js-arrowup-fill');
+const arrowDownShare = document.querySelector('.js-arrowdown-share');
+const arrowUpShare = document.querySelector('.js-arrowup-share');
+
 function toggleDropDownMenu() {
   sectionDesign.classList.toggle('collapsed');
-  //arrowUp.classList.toggle('collapsed');
-  // arrowDown.classList.toggle('collapsed');
+  arrowDownDesign.classList.toggle('collapsed');
+  arrowUpDesign.classList.toggle('collapsed');
 }
 
 function handleClickDropdown() {
@@ -38,6 +46,8 @@ legendDesign.addEventListener('click', handleClickDropdown);
 //FORMULARIO
 function toggleDropDownFill() {
   sectionFill.classList.toggle('collapsed');
+  arrowDownFill.classList.toggle('collapsed');
+  arrowUpFill.classList.toggle('collapsed');
 }
 
 function handleClickDropdownFill() {
@@ -50,6 +60,8 @@ legendFill.addEventListener('click', handleClickDropdownFill);
 //SHARE
 function toggleDropDownShare() {
   sectionShare.classList.toggle('collapsed');
+  arrowDownShare.classList.toggle('collapsed');
+  arrowUpShare.classList.toggle('collapsed');
 }
 
 function handleClickDropdownShare() {
@@ -128,7 +140,7 @@ function handler(){
   let colorDark;
   let colorMedium;
   let colorLight;
-  
+
   if (selectedPalette === 'colours1') {
     colorDark = '#114e4e';
     colorMedium = '#438792';
@@ -144,7 +156,7 @@ function handler(){
     colorMedium = '#eab052';
     colorLight = '#a0c0cf';
   }
- 
+
   previewHeaderStrip.style.borderColor = colorDark;
   previewName.style.color = colorMedium;
   previewJob.style.color = colorLight;
@@ -153,5 +165,5 @@ function handler(){
 
 //evento de cambio de cada uno de los radiobuttons
 paletteButtons.forEach(radio => {
-  radio.addEventListener ('change', handler)
+  radio.addEventListener ('change', handler);
 });

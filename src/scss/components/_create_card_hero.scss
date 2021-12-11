@@ -6,9 +6,10 @@
   align-items: center;
   text-align: center;
   padding: 38px 0 40px 0;
-  @media tablet {
-    border-radius: 15px;
-  
+  @include tablet {
+    border-radius: 6px;
+    width: 50%;
+    height: 812px;
   }
 }
 .card_reset {
@@ -31,9 +32,7 @@
   &__icon {
     padding-right: 5px;
     padding-left: 2px;
-   
   }
- 
 }
 .card-preview {
   width: fit-content;
@@ -45,7 +44,7 @@
   padding: 21px 0 12px;
   box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.35);
   &__header {
-    border-left: 5px solid #438792 ;
+    border-left: 5px solid #438792;
   }
 
   &__photo {
@@ -63,7 +62,6 @@
     text-transform: capitalize;
     font-weight: bold;
     color: #114e4e;
-    
   }
   &__subtitle {
     padding: 0 14px 0 20px;
@@ -80,7 +78,6 @@
   display: flex;
   justify-content: flex-start;
   min-height: 35px;
-  
 
   &--item {
     width: 32px;
