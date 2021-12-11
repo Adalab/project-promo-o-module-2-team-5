@@ -12,15 +12,20 @@ const sectionDesign = document.querySelector('.js-sectionDesign');
 const sectionFill = document.querySelector('.js-sectionFill');
 const sectionShare = document.querySelector('.js-sectionShare');
 
+// const arrowDown = document.querySelector('.js-fa-chevron-down');
+// const arrowUp = document.querySelector('.js-fa-chevron-up');
+
 /*    Sección de variables globales (que usamos en todo el fichero)    */
 /*  -----------------------------------------------------------------  */
 
 /*                        Sección de funciones                         */
 /*  -----------------------------------------------------------------  */
 
-//DISEÑO
+//DISEÑO (ARROW)
 function toggleDropDownMenu() {
   sectionDesign.classList.toggle('collapsed');
+  //arrowUp.classList.toggle('collapsed');
+  // arrowDown.classList.toggle('collapsed');
 }
 
 function handleClickDropdown() {
@@ -59,13 +64,6 @@ legendShare.addEventListener('click', handleClickDropdownShare);
 
 //--------------------RELLENAR EL NOMBRE Y MOSTRAR EN TARJETA-------------
 
-const inputName = document.querySelector('.js-full_name');
-const inputJob = document.querySelector('.js-job');
-const inputEmail = document.querySelector('.js-email');
-const inputPhone = document.querySelector('.js-phone');
-const inputLinkedin = document.querySelector('.js-linkedin');
-const inputGithub = document.querySelector('.js-github');
-
 const previewName = document.querySelector('.js-preview_name');
 const previewJob = document.querySelector('.js-preview_job');
 const previewEmail = document.querySelector('.js-preview_email');
@@ -73,75 +71,40 @@ const previewPhone = document.querySelector('.js-preview_phone');
 const previewLinkedin = document.querySelector('.js-preview_linkedin');
 const previewGithub = document.querySelector('.js-preview_github');
 
-//INPUT NAME
+//selecciono formulario entero
+const form = document.querySelector('.js-form');
 
-let dataName = '';
+//variable global (objeto)
+let data = {
+  name: '',
+  job: '',
+  email: '',
+  phone: '',
+  linkedin: '',
+  github: '',
+};
 
-function handleNameInput() {
-  dataName = inputName.value;
-  previewName.innerHTML = dataName;
+//Función para pintar el preview con lo que escribes en el input
+function renderInputs() {
+  previewName.innerHTML = data.name;
+  previewJob.innerHTML = data.job;
+  previewEmail.href = data.email;
+  previewPhone.href = data.phone;
+  previewLinkedin.href = data.linkedin;
+  previewGithub.href = data.github;
 }
-inputName.addEventListener('keyup', handleNameInput);
 
-//INPUT JOB
-let dataJob = '';
-
-function handleJobInput() {
-  dataJob = inputJob.value;
-  previewJob.innerHTML = dataJob;
+//función manejadora guarda valores del input y ejecuta función que pinta
+function handleFill(e) {
+  //----selecciono el id del input al q le afecta el evento en ese momento
+  const inputId = e.target.id;
+  //------selecciono el valor del input al q le afecta el evento en ese momento
+  const inputValue = e.target.value;
+  //Accedo a la propiedad del objeto y le meto su valor
+  data[inputId] = inputValue;
+  //Ejecuto la FUNCIÓN que me pintará en el preview
+  renderInputs(data);
 }
-inputJob.addEventListener('keyup', handleJobInput);
 
-//INPUT EMAIL
-function handleEmailInput() {
-  previewEmail.href = inputEmail.value;
-}
-inputEmail.addEventListener('keyup', handleEmailInput);
-
-//INPUT tel
-function handleTelInput() {
-  previewPhone.href = inputPhone.value;
-}
-inputPhone.addEventListener('keyup', handleTelInput);
-
-//INPUT linkedin
-function handleLinkedinInput() {
-  previewLinkedin.href = inputLinkedin.value;
-}
-inputLinkedin.addEventListener('keyup', handleLinkedinInput);
-
-//INPUT Github
-function handleGithubInput() {
-  previewGithub.href = inputGithub.value;
-}
-inputGithub.addEventListener('keyup', handleGithubInput);
-
-//-------CÓDIGO MEJORADO aún en proceso---------
-
-// let data = {
-//   name: '',
-//   job: '',
-//   email: '',
-//   phone: '',
-//   linkedin: '',
-//   github: '',
-// };
-
-//Creo función para que lo que está como value del inputName, lo guardo en una variable global q declaro arriba
-
-// function getData(data) {
-//   data.name = e.currentTarget.value;
-// }
-
-// function handleDataInput(e) {
-//   getData();
-//   previewName.innerHTML = data.name;
-// }
-
-// function handleDataInput(e) {
-//   e.preventDefault();
-//   e.currentTarget;
-//   renderData(getData);
-// }
-
-// inputName.addEventListener('keyup', handleDataInput);
+//evento de escuchar el formulario entero(Todos los inputs)
+form.addEventListener('keyup', handleFill);
