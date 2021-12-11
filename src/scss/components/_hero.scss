@@ -5,7 +5,10 @@
   align-items: center;
   text-align: center;
   @include tablet {
-    height: 50vh;
+    height: 50vh; 
+  }
+  @include desktop {
+    height: 90vh;
   }
 
 

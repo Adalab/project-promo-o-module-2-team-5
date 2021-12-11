@@ -41,6 +41,9 @@
     & .fa-chevron-up,
     & .fa-chevron-down {
       color: $lettercolor;
+      &.collapsed {
+        display: none;
+      }
     }
   }
 
