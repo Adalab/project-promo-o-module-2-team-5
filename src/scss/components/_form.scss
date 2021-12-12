@@ -27,6 +27,9 @@
   & .fa-chevron-down {
     color: $lettercolor;
     font-size: 18px;
+    &.collapsed {
+      display: none;
+    }
   }
 }
 

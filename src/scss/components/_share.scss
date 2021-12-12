@@ -1,3 +1,9 @@
+.containerShare {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #d8d8d8;
+  margin-bottom: 30px;
+}
+
 .titleShare {
   display: flex;
   justify-content: space-between;
@@ -19,6 +25,7 @@
       color: $iconscolor;
       &.fa-share-alt {
         padding-right: 10px;
+
       }
     }
   }
@@ -26,16 +33,20 @@
   & .fa-chevron-down {
     color: $lettercolor;
     font-size: 18px;
+
+    &.collapsed {
+      display: none;
+    }
   }
 }
 
 .containerButton {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
   margin-bottom: 30px;
-  border-bottom: 1px solid #d8d8d8;
 
   &.collapsed {
     display: none;
@@ -44,12 +55,22 @@
   .buttonCard {
     display: flex;
     padding: 20px;
-    border: $iconscolor;
     border-radius: 20px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
-    background-color: $iconscolor;
     font-family: $principal-font;
-    margin-bottom: 30px;
+
+    // Estilos buttonCard--on cuando el botón se puede clickar
+    &--on {
+      border: $iconscolor;
+      background-color: $iconscolor;
+    }
+
+    // Estilos buttonCard--off cuando el botón no se puede clickar
+    &--off {
+      border: #d5d5d5;
+      background-color: #d5d5d5;
+      margin-bottom: 30px;
+    }
 
     &__title {
       text-transform: uppercase;
@@ -68,46 +89,6 @@
     }
   }
 }
-
-// SE DUPLICA EL BOTON HASTA QUE METAMOS JAVA añadiendo GREY a la clase
-
-.containerButton-grey {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  border-bottom: 1px solid #d8d8d8;
-
-  .buttonCard-grey {
-    display: flex;
-    padding: 20px;
-    border: #d5d5d5;
-    border-radius: 20px;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
-    background-color: #d5d5d5;
-    font-family: $principal-font;
-    margin-bottom: 30px;
-
-    &__title {
-      text-transform: uppercase;
-      color: white;
-      font-size: 18px;
-      font-weight: 600;
-      padding-left: 10px;
-      padding-right: 15px;
-    }
-    & .far {
-      font-size: 22px;
-      color: white;
-      &.fa-address-card {
-        padding-right: 15px;
-      }
-    }
-  }
-}
-
-////// TERMINA AQUI
 
 .createdCard {
   display: flex;
@@ -115,6 +96,13 @@
   justify-content: center;
   align-items: center;
   text-align: 1.5;
+  padding-top: 20px;
+  border-top: 1px solid #d8d8d8;
+  width: 100%;
+
+  &.collapsed {
+    display: none;
+  }
 
   &__title {
     color: $lettercolor;
@@ -145,7 +133,6 @@
     background-color: rgb(49, 165, 233);
     font-family: $principal-font;
     font-size: 18px;
-    margin-bottom: 30px;
 
     .buttonLink {
       text-decoration: none;
