@@ -178,7 +178,7 @@ paletteButtons.forEach((radio) => {
 const shareButton = document.querySelector('.js-buttonCard');
 const createdCard = document.querySelector('.js-createdCard');
 const createdCardLink = document.querySelector('.js_createdCard__link');
-
+const catchError = document.querySelector('.js_catchError');
 function handleClickButton(e) {
   e.preventDefault();
   fetch('https://awesome-profile-cards.herokuapp.com/card', {
@@ -191,14 +191,14 @@ function handleClickButton(e) {
       console.log(data);
       if (data.success) {
         createdCardLink.innerHTML = data.cardURL;
+        shareButton.classList.add('buttonCard--off');
+        shareButton.classList.remove('buttonCard--on');
+        createdCard.classList.remove('collapsed');
+        catchError.innerHTML = '';
       } else {
-        createdCardLink.innerHTML = 'Error: debes rellenar todos los campos';
+        catchError.innerHTML = 'Error: debes rellenar todos los campos';
       }
     });
-
-  shareButton.classList.add('buttonCard--off');
-  shareButton.classList.remove('buttonCard--on');
-  createdCard.classList.remove('collapsed');
 }
 
 shareButton.addEventListener('click', handleClickButton);
