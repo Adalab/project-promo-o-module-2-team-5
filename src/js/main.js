@@ -82,7 +82,7 @@ const previewEmail = document.querySelector('.js-preview_email');
 const previewPhone = document.querySelector('.js-preview_phone');
 const previewLinkedin = document.querySelector('.js-preview_linkedin');
 const previewGithub = document.querySelector('.js-preview_github');
-
+const previewColourpalette = document.querySelector('.js_colourpalette');
 //selecciono formulario entero
 const form = document.querySelector('.js-form');
 
@@ -94,6 +94,7 @@ let data = {
   phone: '',
   linkedin: '',
   github: '',
+  palette: 'colours1',
 };
 
 //Función para pintar el preview con lo que escribes en el input
@@ -104,6 +105,7 @@ function renderInputs() {
   previewPhone.href = data.phone;
   previewLinkedin.href = data.linkedin;
   previewGithub.href = data.github;
+  previewColourpalette.value = data.palette;
 }
 
 //función manejadora guarda valores del input y ejecuta función que pinta
@@ -175,15 +177,31 @@ paletteButtons.forEach((radio) => {
 
 const shareButton = document.querySelector('.js-buttonCard');
 const createdCard = document.querySelector('.js-createdCard');
+const createdCardLink = document.querySelector('.js_createdCard__link');
 
-function handleClickButton() {
+function handleClickButton(e) {
+  e.preventDefault();
+  fetch('https://awesome-profile-cards.herokuapp.com/card', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: { 'Content-Type': 'application/json' },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      if (data.success) {
+        createdCardLink.innerHTML = data.cardURL;
+      } else {
+        createdCardLink.innerHTML = 'Error: debes rellenar todos los campos';
+      }
+    });
+
   shareButton.classList.add('buttonCard--off');
   shareButton.classList.remove('buttonCard--on');
   createdCard.classList.remove('collapsed');
 }
 
 shareButton.addEventListener('click', handleClickButton);
-
 
 //--------------------- interactividad imagen -----------------------//
 
@@ -192,21 +210,19 @@ const fileField = document.querySelector('.js__profile-upload-btn');
 const profileImage = document.querySelector('.js__profile-image');
 const profilePreview = document.querySelector('.js__profile-preview');
 
-
 /**
  * Recoge el archivo añadido al campo de tipo "file"
- * y lo carga en nuestro objeto FileReader para que 
+ * y lo carga en nuestro objeto FileReader para que
  * lo convierta a algo con lo que podamos trabajar.
  * Añade un listener al FR para que ejecute una función
  * al tener los datos listos
- * @param {evento} e 
+ * @param {evento} e
  */
-function getImage(e){
+function getImage(e) {
   const myFile = e.currentTarget.files[0];
   fr.addEventListener('load', writeImage);
   fr.readAsDataURL(myFile);
 }
-
 
 /**
  * Una vez tenemos los datos listos en el FR podemos
@@ -223,7 +239,6 @@ function writeImage() {
   data.photo = fr.result;
 }
 
-
 /**
  * Genera un click automático en nuesto campo de tipo "file"
  * que está oculto
@@ -235,3 +250,5 @@ function writeImage() {
  * - al campo oculto para cuando cambie su value
  */
 fileField.addEventListener('change', getImage);
+
+//------------PETICIONES AL SERVIDOR------
