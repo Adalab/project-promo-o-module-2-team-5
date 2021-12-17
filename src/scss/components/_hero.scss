@@ -5,10 +5,12 @@
   align-items: center;
   text-align: center;
   @include tablet {
-    height: 50vh; 
+    
   }
   @include desktop {
-    height: 90vh;
+  
+  margin-bottom: 50px;
+    
   }
 
 
@@ -51,7 +53,10 @@
     margin-right: 221px;
     margin-bottom: 186px;
   }
-
+  @include desktop {
+    margin-bottom: 40px;
+    
+  }
 
 
 &__list {
