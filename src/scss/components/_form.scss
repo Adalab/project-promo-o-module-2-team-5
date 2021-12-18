@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 10px;
+  cursor: pointer;
 
   &--icontitle {
     display: flex;
@@ -72,6 +73,7 @@
       box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
       background-color: $iconscolor;
       line-height: 22px;
+      cursor: pointer;
     }
 
     &--preview {

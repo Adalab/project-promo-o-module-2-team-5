@@ -12,9 +12,6 @@ const sectionDesign = document.querySelector('.js-sectionDesign');
 const sectionFill = document.querySelector('.js-sectionFill');
 const sectionShare = document.querySelector('.js-sectionShare');
 
-// const arrowDown = document.querySelector('.js-fa-chevron-down');
-// const arrowUp = document.querySelector('.js-fa-chevron-up');
-
 /*    Sección de variables globales (que usamos en todo el fichero)    */
 /*  -----------------------------------------------------------------  */
 
@@ -78,11 +75,7 @@ legendShare.addEventListener('click', handleClickDropdownShare);
 
 const previewName = document.querySelector('.js-preview_name');
 const previewJob = document.querySelector('.js-preview_job');
-const previewEmail = document.querySelector('.js-preview_email');
-const previewPhone = document.querySelector('.js-preview_phone');
-const previewLinkedin = document.querySelector('.js-preview_linkedin');
-const previewGithub = document.querySelector('.js-preview_github');
-const previewColourpalette = document.querySelector('.js_colourpalette');
+//
 //selecciono formulario entero
 const form = document.querySelector('.js-form');
 
@@ -99,13 +92,14 @@ let data = {
 
 //Función para pintar el preview con lo que escribes en el input
 function renderInputs() {
-  previewName.innerHTML = data.name;
-  previewJob.innerHTML = data.job;
-  previewEmail.href = data.email;
-  previewPhone.href = data.phone;
-  previewLinkedin.href = data.linkedin;
-  previewGithub.href = data.github;
-  previewColourpalette.value = data.palette;
+  //Mantaner en preview los campos rellenos si no hay nada escrito
+  data.name === ''
+    ? (previewName.innerHTML = 'Nombre Apellido')
+    : (previewName.innerHTML = data.name);
+
+  data.job === ''
+    ? (previewJob.innerHTML = 'Front-end developer')
+    : (previewJob.innerHTML = data.job);
 }
 
 //función manejadora guarda valores del input y ejecuta función que pinta
@@ -116,6 +110,7 @@ function handleFill(e) {
   const inputValue = e.target.value;
   //Accedo a la propiedad del objeto y le meto su valor
   data[inputId] = inputValue;
+
   //Ejecuto la FUNCIÓN que me pintará en el preview
   renderInputs(data);
 }
@@ -157,17 +152,11 @@ function handler() {
     colorLight = '#a0c0cf';
   }
 
-  // previewHeaderStrip.style.borderColor = colorDark;
-  // previewName.style.color = colorMedium; ----PREGUNTAR PATRICIA
   previewHeaderStrip.style.borderColor = colorMedium;
   previewName.style.color = colorDark;
   previewJob.style.color = colorLight;
 }
 
-//evento de cambio de cada uno de los radiobuttons
-// paletteButtons.forEach((radio) => {
-//   radio.addEventListener('change', handler); ----preguntar PATRICIA
-// });
 paletteButtons.forEach((radio) => {
   radio.addEventListener('change', handler);
 });
@@ -187,8 +176,10 @@ function handleClickButton(e) {
     headers: { 'Content-Type': 'application/json' },
   })
     .then((response) => response.json())
+
     .then((data) => {
       console.log(data);
+
       if (data.success) {
         createdCardLink.innerHTML = data.cardURL;
         shareButton.classList.add('buttonCard--off');
@@ -198,7 +189,9 @@ function handleClickButton(e) {
       } else {
         catchError.innerHTML = 'Error: debes rellenar todos los campos';
       }
-    });
+    })
+    //Para ver posibles errores del servidor
+    .catch((error) => console.log(`Ha sucedido un error: ${error}`));
 }
 
 shareButton.addEventListener('click', handleClickButton);
@@ -280,11 +273,11 @@ function handleClickReset() {
   // Resetear todos los preview a los placeholder______________
   previewName.innerHTML = 'Nombre Apellido';
   previewJob.innerHTML = 'Front-end developer';
-  previewEmail.href = '';
-  previewPhone.href = '';
-  previewLinkedin.href = '';
-  previewGithub.href = '';
-  previewColourpalette.value = '';
+  // previewEmail.href = '';
+  // previewPhone.href = '';
+  // previewLinkedin.href = '';
+  // previewGithub.href = '';
+  // previewColourpalette.value = '';
   previewHeaderStrip.style.borderColor = '#114e4e';
   previewName.style.color = '#438792';
   previewJob.style.color = '#000000';
