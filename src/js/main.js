@@ -251,27 +251,20 @@ function writeImage() {
  */
 fileField.addEventListener('change', getImage);
 
-
-
 //------------------------RESETEO-----------------------------//
 
 const buttonReset = document.querySelector('.js-card_reset');
 const resetName = document.querySelector('.js-full_name');
 const resetJob = document.querySelector('.js-job');
-const resetImgBtn = document.querySelector('.js__profile-upload-btn');
-const resetImgPrw = document.querySelector('.js__profile-preview');
+// const resetImgBtn = document.querySelector('.js__profile-upload-btn');
+// const resetImgPrw = document.querySelector('.js__profile-preview');
 const resetEmail = document.querySelector('.js-email');
 const resetPhone = document.querySelector('.js-phone');
 const resetLinkedin = document.querySelector('.js-linkedin');
 const resetGithub = document.querySelector('.js-github');
 
-
-
 function handleClickReset() {
-
-
   console.log('estás aqui?', data);
-
 
   // Resetear data_____________
   data = {
@@ -296,11 +289,7 @@ function handleClickReset() {
   previewName.style.color = '#438792';
   previewJob.style.color = '#000000';
 
-
-
   // Resetear el radio button (diseña)_____________________
-
-
 
   // Resetear todos los inputs (rellena)__________________
   resetName.value = '';
@@ -309,18 +298,14 @@ function handleClickReset() {
   resetPhone.value = '';
   resetLinkedin.value = '';
   resetGithub.value = '';
- // resetImgBtn. = '';
- // resetImgPrw. = '' ;
-
+  // resetImgBtn. = '';
+  // resetImgPrw. = '' ;
 
   // Resetear el create card (share)____________________________
 
   shareButton.classList.remove('buttonCard--off');
   shareButton.classList.add('buttonCard--on');
   createdCard.classList.add('collapsed');
-
-
-
 }
 
 buttonReset.addEventListener('click', handleClickReset);
