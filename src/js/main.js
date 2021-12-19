@@ -122,6 +122,8 @@ form.addEventListener('keyup', handleFill);
 //----------------PARA SELECCIONAR LA PALETA----------------------------//
 
 const previewHeaderStrip = document.querySelector('.js-card-preview-header');
+const socialMediaIcon = document.querySelectorAll('.socialmedia_icon');
+const socialMediaCircle = document.querySelectorAll('.card__socialmedia--item');
 //aqui tendrian que ir mas const pero como reutilizo las que ya están declaradas arriba solo pongo esta.
 
 //seleciono el atributo comun para poder coger todos los radiobuttons
@@ -150,6 +152,16 @@ function handler() {
     colorDark = '#3e5b65';
     colorMedium = '#eab052';
     colorLight = '#a0c0cf';
+  }
+
+  for (const eachIcon of socialMediaIcon) {
+    eachIcon.style.color = colorDark;
+
+  }
+
+  for (const eachCircle of socialMediaCircle) {
+    eachCircle.style.borderColor = colorLight;
+
   }
 
   previewHeaderStrip.style.borderColor = colorMedium;
