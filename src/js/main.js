@@ -121,6 +121,18 @@ form.addEventListener('keyup', handleFill);
 //----------------------------------------------------------------------//
 //----------------PARA SELECCIONAR LA PALETA----------------------------//
 
+
+const previewPhone = document.querySelector ('.js-card-preview-socialmedia-phone');
+const previewEmail = document.querySelector ('.js-card-preview-socialmedia-email');
+const previewLinkedin = document.querySelector ('.js-card-preview-socialmedia-linkedin');
+const previewGithub = document.querySelector ('.js-card-preview-socialmedia-github');
+
+const previewIconPhone = document.querySelector ('.js-preview-icon-socialmedia-phone');
+const previewIconEmail = document.querySelector ('.js-preview-icon-socialmedia-email');
+const previewIconLinkedin= document.querySelector ('.js-preview-icon-socialmedia-linkedin');
+const previewIconGithub = document.querySelector('.js-preview-icon-socialmedia-github');
+
+
 const previewHeaderStrip = document.querySelector('.js-card-preview-header');
 //aqui tendrian que ir mas const pero como reutilizo las que ya están declaradas arriba solo pongo esta.
 
@@ -154,7 +166,16 @@ function handler() {
 
   previewHeaderStrip.style.borderColor = colorMedium;
   previewName.style.color = colorDark;
-  previewJob.style.color = colorLight;
+  //previewJob.style.color = colorLight;
+  previewPhone.style.borderColor = colorLight;
+  previewEmail.style.borderColor = colorLight;
+  previewLinkedin.style.borderColor = colorLight;
+  previewGithub.style.borderColor = colorLight;
+  
+  previewIconPhone.style.color = colorDark;
+  previewIconEmail.style.color = colorDark;
+  previewIconLinkedin.style.color= colorDark;
+  previewIconGithub.style.color = colorDark;
 }
 
 paletteButtons.forEach((radio) => {
