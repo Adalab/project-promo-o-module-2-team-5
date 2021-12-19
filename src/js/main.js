@@ -249,15 +249,13 @@ fileField.addEventListener('change', getImage);
 const buttonReset = document.querySelector('.js-card_reset');
 const resetName = document.querySelector('.js-full_name');
 const resetJob = document.querySelector('.js-job');
-// const resetImgBtn = document.querySelector('.js__profile-upload-btn');
-// const resetImgPrw = document.querySelector('.js__profile-preview');
 const resetEmail = document.querySelector('.js-email');
 const resetPhone = document.querySelector('.js-phone');
 const resetLinkedin = document.querySelector('.js-linkedin');
 const resetGithub = document.querySelector('.js-github');
 
 function handleClickReset() {
-  console.log('estás aqui?', data);
+
 
   // Resetear data_____________
   data = {
@@ -278,11 +276,18 @@ function handleClickReset() {
   // previewLinkedin.href = '';
   // previewGithub.href = '';
   // previewColourpalette.value = '';
-  previewHeaderStrip.style.borderColor = '#114e4e';
-  previewName.style.color = '#438792';
+  previewHeaderStrip.style.borderColor = '#438792';
+  previewName.style.color = '#114e4e';
   previewJob.style.color = '#000000';
+  profilePreview.style.backgroundImage = '';
+
 
   // Resetear el radio button (diseña)_____________________
+  const selectedPalette = document.querySelector(
+    '.js-sectionDesign input[name=colourpalette]:checked'
+  );
+  selectedPalette.checked = false;
+
 
   // Resetear todos los inputs (rellena)__________________
   resetName.value = '';
@@ -291,11 +296,11 @@ function handleClickReset() {
   resetPhone.value = '';
   resetLinkedin.value = '';
   resetGithub.value = '';
-  // resetImgBtn. = '';
-  // resetImgPrw. = '' ;
+  fileField.value = '';
+  profileImage.style.backgroundImage = '';
+
 
   // Resetear el create card (share)____________________________
-
   shareButton.classList.remove('buttonCard--off');
   shareButton.classList.add('buttonCard--on');
   createdCard.classList.add('collapsed');
