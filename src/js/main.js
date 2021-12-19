@@ -166,7 +166,6 @@ function handler() {
 
   previewHeaderStrip.style.borderColor = colorMedium;
   previewName.style.color = colorDark;
-  previewJob.style.color = colorLight;
 }
 
 paletteButtons.forEach((radio) => {
