@@ -87,7 +87,7 @@ let data = {
   phone: '',
   linkedin: '',
   github: '',
-  palette: 'colours1',
+  palette: '01',
 };
 
 //Función para pintar el preview con lo que escribes en el input
@@ -144,14 +144,17 @@ function handler() {
     colorDark = '#114e4e';
     colorMedium = '#438792';
     colorLight = '#a2deaf';
+    data.palette= '01';
   } else if (selectedPalette === 'colours2') {
     colorDark = '#420101';
     colorMedium = '#bd1010';
     colorLight = '#e95626';
+    data.palette = '02';
   } else if (selectedPalette === 'colours3') {
     colorDark = '#3e5b65';
     colorMedium = '#eab052';
     colorLight = '#a0c0cf';
+    data.palette = '03';
   }
 
   for (const eachIcon of socialMediaIcon) {
