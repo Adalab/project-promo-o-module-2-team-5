@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 10px;
+  cursor: pointer;
 
   &__title {
     font-family: $principal-font;
@@ -58,11 +59,13 @@
     border-radius: 20px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
     font-family: $principal-font;
+    
 
     // Estilos buttonCard--on cuando el botón se puede clickar
     &--on {
       border: $iconscolor;
       background-color: $iconscolor;
+      cursor: pointer;
     }
 
     // Estilos buttonCard--off cuando el botón no se puede clickar
@@ -89,6 +92,14 @@
     }
   }
 }
+.catchError{
+  font-family: $principal-font;
+  color: red;
+  margin-top: 45px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  }
 
 .createdCard {
   display: flex;
@@ -99,10 +110,11 @@
   padding-top: 20px;
   border-top: 1px solid #d8d8d8;
   width: 100%;
+  
 
   &.collapsed {
     display: none;
-  }
+    }
 
   &__title {
     color: $lettercolor;

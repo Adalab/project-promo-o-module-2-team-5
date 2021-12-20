@@ -300,8 +300,9 @@ function handleClickReset() {
   const selectedPalette = document.querySelector(
     '.js-sectionDesign input[name=colourpalette]:checked'
   );
-  selectedPalette.checked = false;
-
+  if (selectedPalette) {
+    selectedPalette.checked = false;
+  }
 
   // Resetear todos los inputs (rellena)__________________
   resetName.value = '';
@@ -327,7 +328,6 @@ buttonReset.addEventListener('click', handleClickReset);
 //----DESHABILITAR LINKS ICONOS-------------------------------//
 
 const socialMediaItems = document.querySelectorAll('.card__socialmedia--item a');
-
 function handlerSocialMediaItemsClick(event){
 event.preventDefault();
 }
