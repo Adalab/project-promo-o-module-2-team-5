@@ -144,7 +144,7 @@ function handler() {
     colorDark = '#114e4e';
     colorMedium = '#438792';
     colorLight = '#a2deaf';
-    data.palette= '01';
+    data.palette = '01';
   } else if (selectedPalette === 'colours2') {
     colorDark = '#420101';
     colorMedium = '#bd1010';
@@ -159,12 +159,10 @@ function handler() {
 
   for (const eachIcon of socialMediaIcon) {
     eachIcon.style.color = colorDark;
-
   }
 
   for (const eachCircle of socialMediaCircle) {
     eachCircle.style.borderColor = colorLight;
-
   }
 
   previewHeaderStrip.style.borderColor = colorMedium;
@@ -187,7 +185,9 @@ function handleClickButton(e) {
   fetch('https://awesome-profile-cards.herokuapp.com/card', {
     method: 'POST',
     body: JSON.stringify(data),
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+    },
   })
     .then((response) => response.json())
 
@@ -269,8 +269,6 @@ const resetLinkedin = document.querySelector('.js-linkedin');
 const resetGithub = document.querySelector('.js-github');
 
 function handleClickReset() {
-
-
   // Resetear data_____________
   data = {
     name: '',
@@ -295,7 +293,6 @@ function handleClickReset() {
   previewJob.style.color = '#000000';
   profilePreview.style.backgroundImage = '';
 
-
   // Resetear el radio button (diseña)_____________________
   const selectedPalette = document.querySelector(
     '.js-sectionDesign input[name=colourpalette]:checked'
@@ -314,7 +311,6 @@ function handleClickReset() {
   fileField.value = '';
   profileImage.style.backgroundImage = '';
 
-
   // Resetear el create card (share)____________________________
   shareButton.classList.remove('buttonCard--off');
   shareButton.classList.add('buttonCard--on');
@@ -323,16 +319,16 @@ function handleClickReset() {
 
 buttonReset.addEventListener('click', handleClickReset);
 
-
 //------------------------------------------------------------//
 //----DESHABILITAR LINKS ICONOS-------------------------------//
 
-const socialMediaItems = document.querySelectorAll('.card__socialmedia--item a');
-function handlerSocialMediaItemsClick(event){
-event.preventDefault();
+const socialMediaItems = document.querySelectorAll(
+  '.card__socialmedia--item a'
+);
+function handlerSocialMediaItemsClick(event) {
+  event.preventDefault();
 }
 
-
 socialMediaItems.forEach((a) => {
-  a.addEventListener('click',handlerSocialMediaItemsClick);
+  a.addEventListener('click', handlerSocialMediaItemsClick);
 });
