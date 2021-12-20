@@ -291,6 +291,12 @@ function handleClickReset() {
   previewHeaderStrip.style.borderColor = '#438792';
   previewName.style.color = '#114e4e';
   previewJob.style.color = '#000000';
+  for (const eachIcon of socialMediaIcon) {
+    eachIcon.style.color = '#114e4e';
+  }
+  for (const eachCircle of socialMediaCircle) {
+    eachCircle.style.borderColor = '#a2deaf';
+  }
   profilePreview.style.backgroundImage = '';
 
   // Resetear el radio button (diseña)_____________________
