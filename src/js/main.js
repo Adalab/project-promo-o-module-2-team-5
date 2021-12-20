@@ -318,3 +318,18 @@ function handleClickReset() {
 }
 
 buttonReset.addEventListener('click', handleClickReset);
+
+
+//------------------------------------------------------------//
+//----DESHABILITAR LINKS ICONOS-------------------------------//
+
+const socialMediaItems = document.querySelectorAll('.card__socialmedia--item a');
+
+function handlerSocialMediaItemsClick(event){
+event.preventDefault();
+}
+
+
+socialMediaItems.forEach((a) => {
+  a.addEventListener('click',handlerSocialMediaItemsClick);
+});
