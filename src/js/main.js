@@ -71,6 +71,40 @@ legendShare.addEventListener('click', handleClickDropdownShare);
 /* Sección de eventos (addEventListener y funciones handler asociadas) */
 /*  -----------------------------------------------------------------  */
 
+//----COLAPSABLES (AL ABRIR UNO QUE SE OCULTE EL RESTO)-------
+
+function handleClickLegendDesign() {   
+  if(sectionDesign.classList.contains('collapsed')) {    
+    sectionFill.classList.toggle('collapsed');
+    sectionShare.classList.toggle('collapsed');
+  } else {    
+    sectionFill.classList.add('collapsed');
+    sectionShare.classList.add('collapsed');
+  }  
+}
+function handleClickLegendFill() {
+  if(sectionFill.classList.contains('collapsed')) {    
+    sectionDesign.classList.toggle('collapsed');
+    sectionShare.classList.toggle('collapsed');
+  } else {    
+    sectionDesign.classList.add('collapsed');
+    sectionShare.classList.add('collapsed');
+  }  
+}
+function handleClickLegendShare() {
+  if(sectionShare.classList.contains('collapsed')) {    
+    sectionDesign.classList.toggle('collapsed');
+    sectionFill.classList.toggle('collapsed');
+  } else {    
+    sectionDesign.classList.add('collapsed');
+    sectionFill.classList.add('collapsed');
+  }
+}  
+
+legendDesign.addEventListener('click', handleClickLegendDesign);
+legendFill.addEventListener('click', handleClickLegendFill);
+legendShare.addEventListener('click', handleClickLegendShare);
+
 //--------------------RELLENAR EL NOMBRE Y MOSTRAR EN TARJETA-------------
 
 const previewName = document.querySelector('.js-preview_name');
