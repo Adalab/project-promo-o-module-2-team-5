@@ -227,6 +227,7 @@ function handleClickButton(e) {
 
       if (data.success) {
         createdCardLink.innerHTML = data.cardURL;
+        createdCardLink.href = `${data.cardURL}`;
         twitterBtn.href = `https://twitter.com/intent/tweet?url=${data.cardURL}`;
         shareButton.classList.add('buttonCard--off');
         shareButton.classList.remove('buttonCard--on');
