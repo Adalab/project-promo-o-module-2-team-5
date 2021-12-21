@@ -1,6 +1,5 @@
 'use strict';
 
-console.log('>> Ready :)');
 
 /*              Sección de elementos que usamos en el HTML             */
 /*  -----------------------------------------------------------------  */
@@ -34,7 +33,6 @@ function toggleDropDownMenu() {
 }
 
 function handleClickDropdown() {
-  // e.preventDefault();
   toggleDropDownMenu();
 }
 
@@ -48,7 +46,6 @@ function toggleDropDownFill() {
 }
 
 function handleClickDropdownFill() {
-  // e.preventDefault();
   toggleDropDownFill();
 }
 
@@ -62,7 +59,6 @@ function toggleDropDownShare() {
 }
 
 function handleClickDropdownShare() {
-  // e.preventDefault();
   toggleDropDownShare();
 }
 
@@ -73,33 +69,33 @@ legendShare.addEventListener('click', handleClickDropdownShare);
 
 //----COLAPSABLES (AL ABRIR UNO QUE SE OCULTE EL RESTO)-------
 
-function handleClickLegendDesign() {   
-  if(sectionDesign.classList.contains('collapsed')) {    
+function handleClickLegendDesign() {
+  if (sectionDesign.classList.contains('collapsed')) {
     sectionFill.classList.toggle('collapsed');
     sectionShare.classList.toggle('collapsed');
-  } else {    
+  } else {
     sectionFill.classList.add('collapsed');
     sectionShare.classList.add('collapsed');
-  }  
+  }
 }
 function handleClickLegendFill() {
-  if(sectionFill.classList.contains('collapsed')) {    
+  if (sectionFill.classList.contains('collapsed')) {
     sectionDesign.classList.toggle('collapsed');
     sectionShare.classList.toggle('collapsed');
-  } else {    
+  } else {
     sectionDesign.classList.add('collapsed');
     sectionShare.classList.add('collapsed');
-  }  
+  }
 }
 function handleClickLegendShare() {
-  if(sectionShare.classList.contains('collapsed')) {    
+  if (sectionShare.classList.contains('collapsed')) {
     sectionDesign.classList.toggle('collapsed');
     sectionFill.classList.toggle('collapsed');
-  } else {    
+  } else {
     sectionDesign.classList.add('collapsed');
     sectionFill.classList.add('collapsed');
   }
-}  
+}
 
 legendDesign.addEventListener('click', handleClickLegendDesign);
 legendFill.addEventListener('click', handleClickLegendFill);
@@ -214,6 +210,8 @@ const shareButton = document.querySelector('.js-buttonCard');
 const createdCard = document.querySelector('.js-createdCard');
 const createdCardLink = document.querySelector('.js_createdCard__link');
 const catchError = document.querySelector('.js_catchError');
+const twitterBtn = document.querySelector('.js-buttonLink');
+
 function handleClickButton(e) {
   e.preventDefault();
   fetch('https://awesome-profile-cards.herokuapp.com/card', {
@@ -226,10 +224,10 @@ function handleClickButton(e) {
     .then((response) => response.json())
 
     .then((data) => {
-      console.log(data);
 
       if (data.success) {
         createdCardLink.innerHTML = data.cardURL;
+        twitterBtn.href = `https://twitter.com/intent/tweet?url=${data.cardURL}`;
         shareButton.classList.add('buttonCard--off');
         shareButton.classList.remove('buttonCard--on');
         createdCard.classList.remove('collapsed');
@@ -237,9 +235,7 @@ function handleClickButton(e) {
       } else {
         catchError.innerHTML = 'Error: debes rellenar todos los campos';
       }
-    })
-    //Para ver posibles errores del servidor
-    .catch((error) => console.log(`Ha sucedido un error: ${error}`));
+    });
 }
 
 shareButton.addEventListener('click', handleClickButton);
