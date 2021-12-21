@@ -73,37 +73,39 @@ legendShare.addEventListener('click', handleClickDropdownShare);
 
 //----COLAPSABLES (AL ABRIR UNO QUE SE OCULTE EL RESTO)-------
 
-function handleClickLegendDesign() {   
-  if(sectionDesign.classList.contains('collapsed')) {    
+function handleClickLegendDesign() {
+  if (sectionDesign.classList.contains('collapsed')) {
     sectionFill.classList.toggle('collapsed');
     sectionShare.classList.toggle('collapsed');
-  } else {    
+  } else {
     sectionFill.classList.add('collapsed');
     sectionShare.classList.add('collapsed');
-  }  
+  }
 }
 function handleClickLegendFill() {
-  if(sectionFill.classList.contains('collapsed')) {    
+  if (sectionFill.classList.contains('collapsed')) {
     sectionDesign.classList.toggle('collapsed');
     sectionShare.classList.toggle('collapsed');
-  } else {    
+  } else {
     sectionDesign.classList.add('collapsed');
     sectionShare.classList.add('collapsed');
-  }  
+  }
 }
 function handleClickLegendShare() {
-  if(sectionShare.classList.contains('collapsed')) {    
+  if (sectionShare.classList.contains('collapsed')) {
     sectionDesign.classList.toggle('collapsed');
     sectionFill.classList.toggle('collapsed');
-  } else {    
+  } else {
     sectionDesign.classList.add('collapsed');
     sectionFill.classList.add('collapsed');
   }
-}  
+}
 
 legendDesign.addEventListener('click', handleClickLegendDesign);
 legendFill.addEventListener('click', handleClickLegendFill);
 legendShare.addEventListener('click', handleClickLegendShare);
+
+//-------------------LEGENDS--------
 
 //--------------------RELLENAR EL NOMBRE Y MOSTRAR EN TARJETA-------------
 
