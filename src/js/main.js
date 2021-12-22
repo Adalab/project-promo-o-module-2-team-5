@@ -2,13 +2,13 @@
 
 /*              Sección de elementos que usamos en el HTML             */
 /*  -----------------------------------------------------------------  */
-const legendDesign = document.querySelector('.js-legendDesign');
-const legendFill = document.querySelector('.js-legendFill');
-const legendShare = document.querySelector('.js-legendShare');
+// const legendDesign = document.querySelector('.js-legendDesign');
+// const legendFill = document.querySelector('.js-legendFill');
+// const legendShare = document.querySelector('.js-legendShare');
 
-const sectionDesign = document.querySelector('.js-sectionDesign');
-const sectionFill = document.querySelector('.js-sectionFill');
-const sectionShare = document.querySelector('.js-sectionShare');
+// const sectionDesign = document.querySelector('.js-sectionDesign');
+// const sectionFill = document.querySelector('.js-sectionFill');
+// const sectionShare = document.querySelector('.js-sectionShare');
 
 /*    Sección de variables globales (que usamos en todo el fichero)    */
 /*  -----------------------------------------------------------------  */
@@ -18,12 +18,12 @@ const sectionShare = document.querySelector('.js-sectionShare');
 
 //DISEÑO (ARROW)
 
-const arrowDownDesign = document.querySelector('.js-arrowdown-design');
-const arrowUpDesign = document.querySelector('.js-arrowup-design');
-const arrowDownFill = document.querySelector('.js-arrowdown-fill');
-const arrowUpFill = document.querySelector('.js-arrowup-fill');
-const arrowDownShare = document.querySelector('.js-arrowdown-share');
-const arrowUpShare = document.querySelector('.js-arrowup-share');
+// const arrowDownDesign = document.querySelector('.js-arrowdown-design');
+// const arrowUpDesign = document.querySelector('.js-arrowup-design');
+// const arrowDownFill = document.querySelector('.js-arrowdown-fill');
+// const arrowUpFill = document.querySelector('.js-arrowup-fill');
+// const arrowDownShare = document.querySelector('.js-arrowdown-share');
+// const arrowUpShare = document.querySelector('.js-arrowup-share');
 
 // function toggleDropDownMenu() {
 //   sectionDesign.classList.toggle('collapsed');
@@ -117,14 +117,6 @@ const arrowUpShare = document.querySelector('.js-arrowup-share');
 //-------------------LEGENDS---------------
 
 const allLegends = document.querySelectorAll('.js-legend');
-//console.log(allLegends);
-
-const allContents = document.querySelectorAll('.js_content');
-console.log(allContents);
-
-// for (const eachContent of allContents) {
-//   eachContent.classList.toggle('collapsed');
-// }
 
 for (const eachLegend of allLegends) {
   eachLegend.addEventListener('click', handleClickAnyLegend);
@@ -132,25 +124,44 @@ for (const eachLegend of allLegends) {
 
 function handleClickAnyLegend(e) {
   const selectedLegend = e.target.id;
-  console.log('SelectedLegend  ' + selectedLegend);
+  console.log('legend clicado --> ' + selectedLegend);
+  const contents = document.querySelectorAll('.js_content');
 
-  for (const eachLegend of allLegends) {
-    console.log('AQUIIII' + eachLegend.id, selectedLegend);
-    if (selectedLegend === eachLegend.id) {
-      console.log('ifff' + eachLegend.id, selectedLegend);
-      eachLegend.classList.toggle('collapsed');
-      arrowDownDesign.classList.remove('fa-chevron-up');
-      arrowDownDesign.classList.add('fa-chevron-down');
-      // sectionDesign.classList.toggle('collapsed');
-      // sectionFill.classList.toggle('collapsed');
-      // sectionShare.classList.toggle('collapsed');
+  for (const conten of contents) {
+    const idContent = conten.id;
+    console.log('contenidos --> ' + idContent);
+    if (idContent.includes(selectedLegend)) {
+      conten.classList.toggle('collapsed');
     } else {
-      eachLegend.classList.add('collapsed');
+      conten.classList.add('collapsed');
     }
   }
 }
 
-//---------COMMIT DE L
+// function handleClickAnyLegend(e) {
+//   const selectedLegend = e.target.id;
+//   console.log('SelectedLegend  ' + selectedLegend);
+
+//   for (const eachLegend of allLegends) {
+//     console.log('AQUIIII' + eachLegend.id, selectedLegend);
+
+//     for (const eachContent of allContents) {
+//       eachContent.classList.toggle('collapsed');
+//     }
+
+//     if (selectedLegend === eachLegend.id) {
+//       console.log('ifff' + eachLegend.id, selectedLegend);
+//       eachLegend.classList.toggle('collapsed');
+//       arrowDownDesign.classList.remove('fa-chevron-up');
+//       arrowDownDesign.classList.add('fa-chevron-down');
+//       // sectionDesign.classList.toggle('collapsed');
+//       // sectionFill.classList.toggle('collapsed');
+//       // sectionShare.classList.toggle('collapsed');
+//     } else {
+//       eachLegend.classList.add('collapsed');
+//     }
+//   }
+// }
 
 //--------------------RELLENAR EL NOMBRE Y MOSTRAR EN TARJETA-------------
 
