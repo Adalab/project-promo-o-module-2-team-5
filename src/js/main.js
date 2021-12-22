@@ -25,46 +25,46 @@ const arrowUpFill = document.querySelector('.js-arrowup-fill');
 const arrowDownShare = document.querySelector('.js-arrowdown-share');
 const arrowUpShare = document.querySelector('.js-arrowup-share');
 
-function toggleDropDownMenu() {
-  sectionDesign.classList.toggle('collapsed');
-  arrowDownDesign.classList.toggle('collapsed');
-  arrowUpDesign.classList.toggle('collapsed');
-}
+// function toggleDropDownMenu() {
+//   sectionDesign.classList.toggle('collapsed');
+//   arrowDownDesign.classList.toggle('collapsed');
+//   arrowUpDesign.classList.toggle('collapsed');
+// }
 
-function handleClickDropdown() {
-  toggleDropDownMenu();
-}
+// function handleClickDropdown() {
+//   toggleDropDownMenu();
+// }
 
-legendDesign.addEventListener('click', handleClickDropdown);
+// legendDesign.addEventListener('click', handleClickDropdown);
 
-//FORMULARIO;
-function toggleDropDownFill() {
-  sectionFill.classList.toggle('collapsed');
-  arrowDownFill.classList.toggle('collapsed');
-  arrowUpFill.classList.toggle('collapsed');
-  arrowUpShare.classList.toggle('collapsed');
-  arrowDownShare.classList.toggle('collapsed');
-  //arrowUpDesign.classList.toggle('collapsed');
-}
+// //FORMULARIO;
+// function toggleDropDownFill() {
+//   sectionFill.classList.toggle('collapsed');
+//   arrowDownFill.classList.toggle('collapsed');
+//   arrowUpFill.classList.toggle('collapsed');
+//   arrowUpShare.classList.toggle('collapsed');
+//   arrowDownShare.classList.toggle('collapsed');
+//   //arrowUpDesign.classList.toggle('collapsed');
+// }
 
-function handleClickDropdownFill() {
-  toggleDropDownFill();
-}
+// function handleClickDropdownFill() {
+//   toggleDropDownFill();
+// }
 
-legendFill.addEventListener('click', handleClickDropdownFill);
+// legendFill.addEventListener('click', handleClickDropdownFill);
 
-//SHARE
-function toggleDropDownShare() {
-  sectionShare.classList.toggle('collapsed');
-  arrowDownShare.classList.toggle('collapsed');
-  arrowUpShare.classList.toggle('collapsed');
-}
+// //SHARE
+// function toggleDropDownShare() {
+//   sectionShare.classList.toggle('collapsed');
+//   arrowDownShare.classList.toggle('collapsed');
+//   arrowUpShare.classList.toggle('collapsed');
+// }
 
-function handleClickDropdownShare() {
-  toggleDropDownShare();
-}
+// function handleClickDropdownShare() {
+//   toggleDropDownShare();
+// }
 
-legendShare.addEventListener('click', handleClickDropdownShare);
+// legendShare.addEventListener('click', handleClickDropdownShare);
 
 /* Sección de eventos (addEventListener y funciones handler asociadas) */
 /*  -----------------------------------------------------------------  */
@@ -117,7 +117,14 @@ legendShare.addEventListener('click', handleClickDropdownShare);
 //-------------------LEGENDS---------------
 
 const allLegends = document.querySelectorAll('.js-legend');
-console.log(allLegends);
+//console.log(allLegends);
+
+const allContents = document.querySelectorAll('.js_content');
+console.log(allContents);
+
+// for (const eachContent of allContents) {
+//   eachContent.classList.toggle('collapsed');
+// }
 
 for (const eachLegend of allLegends) {
   eachLegend.addEventListener('click', handleClickAnyLegend);
@@ -125,21 +132,25 @@ for (const eachLegend of allLegends) {
 
 function handleClickAnyLegend(e) {
   const selectedLegend = e.target.id;
-  console.log(selectedLegend);
-  // const nextClickedLegend = selectedLegend.nextElementSibling;
-  //traer arrow desde html y poner solo un icon con dos clases
-  // console.log('Entra el ElementSibliing' + nextClickedLegend);
+  console.log('SelectedLegend  ' + selectedLegend);
+
   for (const eachLegend of allLegends) {
-    console.log(eachLegend.id, selectedLegend);
+    console.log('AQUIIII' + eachLegend.id, selectedLegend);
     if (selectedLegend === eachLegend.id) {
+      console.log('ifff' + eachLegend.id, selectedLegend);
       eachLegend.classList.toggle('collapsed');
       arrowDownDesign.classList.remove('fa-chevron-up');
       arrowDownDesign.classList.add('fa-chevron-down');
+      // sectionDesign.classList.toggle('collapsed');
+      // sectionFill.classList.toggle('collapsed');
+      // sectionShare.classList.toggle('collapsed');
     } else {
       eachLegend.classList.add('collapsed');
     }
   }
 }
+
+//---------COMMIT DE L
 
 //--------------------RELLENAR EL NOMBRE Y MOSTRAR EN TARJETA-------------
 
