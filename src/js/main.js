@@ -1,6 +1,5 @@
 'use strict';
 
-
 /*              Sección de elementos que usamos en el HTML             */
 /*  -----------------------------------------------------------------  */
 const legendDesign = document.querySelector('.js-legendDesign');
@@ -38,11 +37,14 @@ function handleClickDropdown() {
 
 legendDesign.addEventListener('click', handleClickDropdown);
 
-//FORMULARIO
+//FORMULARIO;
 function toggleDropDownFill() {
   sectionFill.classList.toggle('collapsed');
   arrowDownFill.classList.toggle('collapsed');
   arrowUpFill.classList.toggle('collapsed');
+  arrowUpShare.classList.toggle('collapsed');
+  arrowDownShare.classList.toggle('collapsed');
+  //arrowUpDesign.classList.toggle('collapsed');
 }
 
 function handleClickDropdownFill() {
@@ -69,39 +71,75 @@ legendShare.addEventListener('click', handleClickDropdownShare);
 
 //----COLAPSABLES (AL ABRIR UNO QUE SE OCULTE EL RESTO)-------
 
-function handleClickLegendDesign() {
-  if (sectionDesign.classList.contains('collapsed')) {
-    sectionFill.classList.toggle('collapsed');
-    sectionShare.classList.toggle('collapsed');
-  } else {
-    sectionFill.classList.add('collapsed');
-    sectionShare.classList.add('collapsed');
-  }
-}
-function handleClickLegendFill() {
-  if (sectionFill.classList.contains('collapsed')) {
-    sectionDesign.classList.toggle('collapsed');
-    sectionShare.classList.toggle('collapsed');
-  } else {
-    sectionDesign.classList.add('collapsed');
-    sectionShare.classList.add('collapsed');
-  }
-}
-function handleClickLegendShare() {
-  if (sectionShare.classList.contains('collapsed')) {
-    sectionDesign.classList.toggle('collapsed');
-    sectionFill.classList.toggle('collapsed');
-  } else {
-    sectionDesign.classList.add('collapsed');
-    sectionFill.classList.add('collapsed');
-  }
+// function handleClickLegendDesign() {
+//   if (sectionDesign.classList.contains('collapsed')) {
+//     sectionFill.classList.toggle('collapsed');
+//     sectionShare.classList.toggle('collapsed');
+//     arrowDownDesign.classList.remove('fa-chevron-up');
+//     arrowDownDesign.classList.add('fa-chevron-down');
+//     arrowUpDesign.classList.toggle('collapsed');
+//     arrowDownDesign.classList.toggle('collapsed');
+//   } else {
+//     sectionFill.classList.add('collapsed');
+//     sectionShare.classList.add('collapsed');
+//   }
+// }
+// function handleClickLegendFill() {
+//   if (sectionFill.classList.contains('collapsed')) {
+//     sectionDesign.classList.toggle('collapsed');
+//     sectionShare.classList.toggle('collapsed');
+//   } else {
+//     sectionDesign.classList.add('collapsed');
+//     sectionShare.classList.add('collapsed');
+//   }
+// }
+// function handleClickLegendShare() {
+//   if (sectionShare.classList.contains('collapsed')) {
+//     sectionDesign.classList.toggle('collapsed');
+//     sectionFill.classList.toggle('collapsed');
+//   } else {
+//     sectionDesign.classList.add('collapsed');
+//     sectionFill.classList.add('collapsed');
+//   }
+// }
+
+// legendDesign.addEventListener('click', handleClickLegendDesign);
+// legendFill.addEventListener('click', handleClickLegendFill);
+// legendShare.addEventListener('click', handleClickLegendShare);
+
+// if (
+//   selectedLegend === 'design' &&
+//   sectionDesign.classList.contains('collapsed')
+// ) {
+//   sectionFill.classList.toggle('collapsed');
+//   sectionShare.classList.toggle('collapsed');
+// }
+//-------------------LEGENDS---------------
+
+const allLegends = document.querySelectorAll('.js-legend');
+console.log(allLegends);
+
+for (const eachLegend of allLegends) {
+  eachLegend.addEventListener('click', handleClickAnyLegend);
 }
 
-legendDesign.addEventListener('click', handleClickLegendDesign);
-legendFill.addEventListener('click', handleClickLegendFill);
-legendShare.addEventListener('click', handleClickLegendShare);
-
-//-------------------LEGENDS--------
+function handleClickAnyLegend(e) {
+  const selectedLegend = e.target.id;
+  console.log(selectedLegend);
+  // const nextClickedLegend = selectedLegend.nextElementSibling;
+  //traer arrow desde html y poner solo un icon con dos clases
+  // console.log('Entra el ElementSibliing' + nextClickedLegend);
+  for (const eachLegend of allLegends) {
+    console.log(eachLegend.id, selectedLegend);
+    if (selectedLegend === eachLegend.id) {
+      eachLegend.classList.toggle('collapsed');
+      arrowDownDesign.classList.remove('fa-chevron-up');
+      arrowDownDesign.classList.add('fa-chevron-down');
+    } else {
+      eachLegend.classList.add('collapsed');
+    }
+  }
+}
 
 //--------------------RELLENAR EL NOMBRE Y MOSTRAR EN TARJETA-------------
 
@@ -226,7 +264,6 @@ function handleClickButton(e) {
     .then((response) => response.json())
 
     .then((data) => {
-
       if (data.success) {
         createdCardLink.innerHTML = data.cardURL;
         createdCardLink.href = `${data.cardURL}`;
