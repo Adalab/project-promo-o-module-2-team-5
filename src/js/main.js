@@ -292,6 +292,16 @@ fileField.addEventListener('change', getImage);
 
 //------------------------RESETEO-----------------------------//
 
+
+const buttonReset = document.querySelector('.js-card_reset');
+function handleClickReset() {
+  location.reload();
+}
+
+buttonReset.addEventListener('click', handleClickReset);
+
+
+/*
 const buttonReset = document.querySelector('.js-card_reset');
 const resetName = document.querySelector('.js-full_name');
 const resetJob = document.querySelector('.js-job');
@@ -370,3 +380,4 @@ function handlerSocialMediaItemsClick(event) {
 socialMediaItems.forEach((a) => {
   a.addEventListener('click', handlerSocialMediaItemsClick);
 });
+*/
