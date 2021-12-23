@@ -229,7 +229,7 @@ function handleClickButton(e) {
         createdCardLink.innerHTML = data.cardURL;
         createdCardLink.href = `${data.cardURL}`;
         const textCardTwitter ='Mira la tarjeta que me he creado!!!';
-        twitterBtn.href = `https://twitter.com/intent/tweet?text=${textCardTwitter}url=${data.cardURL}`;
+        twitterBtn.href = `https://twitter.com/intent/tweet?text=${textCardTwitter}&url=${data.cardURL}`;
         shareButton.classList.add('buttonCard--off');
         shareButton.classList.remove('buttonCard--on');
         createdCard.classList.remove('collapsed');
