@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Awesome profile-cards</title>
-    <!--externals -->
-    <script
-      src="https://kit.fontawesome.com/80c9b8179a.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- internals -->
-    <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="icon" href="./assets/images/tarjetas-molonas.png" />
-  </head>
 
-  <body>
-    <include
-      header="headerCard"
-      src="./partials/header.html"
-      img="imgCard"
-    ></include>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Awesome profile-cards</title>
+  <!--externals -->
+  <script src="https://kit.fontawesome.com/80c9b8179a.js" crossorigin="anonymous"></script>
+  <!-- internals -->
+  <link rel="stylesheet" href="./assets/css/main.css" />
+  <link rel="icon" href="./assets/images/image (1).png" />
+</head>
 
-    <main class="create_card_main">
-      <include src="./partials/create_card_hero.html"></include>
-      <section class="background_features">
-        <include src="./partials/design.html"></include>
-        <include src="./partials/form.html"></include>
-        <include src="./partials/share.html"></include>
-      </section>
-    </main>
+<body>
+  <include header="headerCard" src="./partials/header.html" img="imgCard"></include>
 
-    <include src="./partials/footer.html"></include>
-    <script src="./assets/js/main.js"></script>
-  </body>
+  <main class="create_card_main">
+    <include src="./partials/create_card_hero.html"></include>
+    <section class="background_features">
+      <include src="./partials/design.html"></include>
+      <include src="./partials/form.html"></include>
+      <include src="./partials/share.html"></include>
+    </section>
+  </main>
+
+  <include src="./partials/footer.html"></include>
+  <script src="./assets/js/main.js"></script>
+</body>
+
 </html>
