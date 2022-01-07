@@ -1,5 +1,6 @@
 'use strict';
 
+
 //-------------------LEGENDS---------------
 
 const arrowDesign = document.querySelector('.js-arrowdown-design');
@@ -246,6 +247,8 @@ function writeImage() {
  */
 fileField.addEventListener('change', getImage);
 
+
+
 //------------------------RESETEO-----------------------------//
 
 const buttonReset = document.querySelector('.js-card_reset');
@@ -254,84 +257,3 @@ function handleClickReset() {
 }
 
 buttonReset.addEventListener('click', handleClickReset);
-
-/*
-const buttonReset = document.querySelector('.js-card_reset');
-const resetName = document.querySelector('.js-full_name');
-const resetJob = document.querySelector('.js-job');
-const resetEmail = document.querySelector('.js-email');
-const resetPhone = document.querySelector('.js-phone');
-const resetLinkedin = document.querySelector('.js-linkedin');
-const resetGithub = document.querySelector('.js-github');
-
-function handleClickReset() {
-  // Resetear data_____________
-  data = {
-    name: '',
-    job: '',
-    email: '',
-    phone: '',
-    linkedin: '',
-    github: '',
-    palette: 'colours1',
-  };
-
-  // Resetear todos los preview a los placeholder______________
-  previewName.innerHTML = 'Nombre Apellido';
-  previewJob.innerHTML = 'Front-end developer';
-  // previewEmail.href = '';
-  // previewPhone.href = '';
-  // previewLinkedin.href = '';
-  // previewGithub.href = '';
-  // previewColourpalette.value = '';
-  previewHeaderStrip.style.borderColor = '#438792';
-  previewName.style.color = '#114e4e';
-  previewJob.style.color = '#000000';
-  for (const eachIcon of socialMediaIcon) {
-    eachIcon.style.color = '#114e4e';
-  }
-  for (const eachCircle of socialMediaCircle) {
-    eachCircle.style.borderColor = '#a2deaf';
-  }
-  profilePreview.style.backgroundImage = '';
-
-  // Resetear el radio button (diseña)_____________________
-  const selectedPalette = document.querySelector(
-    '.js-sectionDesign input[name=colourpalette]:checked'
-  );
-  if (selectedPalette) {
-    selectedPalette.checked = false;
-  }
-
-  // Resetear todos los inputs (rellena)__________________
-  resetName.value = '';
-  resetJob.value = '';
-  resetEmail.value = '';
-  resetPhone.value = '';
-  resetLinkedin.value = '';
-  resetGithub.value = '';
-  fileField.value = '';
-  profileImage.style.backgroundImage = '';
-
-  // Resetear el create card (share)____________________________
-  shareButton.classList.remove('buttonCard--off');
-  shareButton.classList.add('buttonCard--on');
-  createdCard.classList.add('collapsed');
-}
-
-buttonReset.addEventListener('click', handleClickReset);
-
-//------------------------------------------------------------//
-//----DESHABILITAR LINKS ICONOS-------------------------------//
-
-const socialMediaItems = document.querySelectorAll(
-  '.card__socialmedia--item a'
-);
-function handlerSocialMediaItemsClick(event) {
-  event.preventDefault();
-}
-
-socialMediaItems.forEach((a) => {
-  a.addEventListener('click', handlerSocialMediaItemsClick);
-});
-*/
