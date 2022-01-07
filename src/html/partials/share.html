@@ -1,26 +1,34 @@
 <section class="container containerShare">
-  <div class="titleShare js-legendShare collapsed">
+  <div class="titleShare js-legendShare js-legend" id="share">
     <div class="titleShare__titleIcon">
       <i class="fas fa-share-alt"></i>
       <h4 class="titleShare__title">Comparte</h4>
     </div>
-    <i class="fas fa-chevron-down js-arrowdown-share" alt="icon"></i>
-    <i class="fas fa-chevron-up js-arrowup-share collapsed" alt="icon"></i>
+    <i class="fas fa-chevron-down js-arrowdown-share js_arrows" alt="icon"></i>
+    <!-- <i class="fas fa-chevron-up js-arrowup-share collapsed" alt="icon"></i> -->
   </div>
 
-  <div class="containerButton js-sectionShare collapsed">
+  <div
+    class="containerButton js-sectionShare js_content collapsed"
+    id="shareContent"
+  >
     <button class="buttonCard js-buttonCard buttonCard--on">
       <i class="far fa-address-card"></i>
       <p class="buttonCard__title">Crear tarjeta</p>
     </button>
-    <p class="catchError js_catchError "></p>
+    <p class="catchError js_catchError"></p>
 
     <div class="createdCard js-createdCard collapsed">
       <h5 class="createdCard__title">La tarjeta ha sido creada:</h5>
       <a class="createdCard__link js_createdCard__link" href="?????"></a>
       <button class="createdCard__buttonTwitter">
         <i class="fab fa-twitter"></i>
-        <a class="buttonLink js-buttonLink" href="www.twitter.com" title="twitter">Compartir en Twitter</a>
+        <a
+          class="buttonLink js-buttonLink"
+          href="www.twitter.com"
+          title="twitter"
+          >Compartir en Twitter</a
+        >
       </button>
     </div>
   </div>
