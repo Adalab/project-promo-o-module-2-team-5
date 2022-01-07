@@ -1,12 +1,10 @@
 'use strict';
 
-
 //-------------------LEGENDS---------------
 
 const arrowDesign = document.querySelector('.js-arrowdown-design');
 const arrowFill = document.querySelector('.js-arrowdown-fill');
 const arrowShare = document.querySelector('.js-arrowdown-share');
-
 const allLegends = document.querySelectorAll('.js-legend');
 
 for (const eachLegend of allLegends) {
@@ -78,6 +76,22 @@ let data = {
   palette: '01',
 };
 
+// LocalStorage
+
+function setDataInLocalStorage() {
+  localStorage.setItem('dataSaved', JSON.stringify(data));
+}
+
+function getDataFromLocalStorage() {
+  const localStorageData = localStorage.getItem('dataSaved');
+  if (localStorageData !== null) {
+    const object = JSON.parse(localStorageData);
+    data = object;
+    renderInputs();
+    handleFill();
+  }
+}
+
 //Función para pintar el preview con lo que escribes en el input
 function renderInputs() {
   //Mantaner en preview los campos rellenos si no hay nada escrito
@@ -88,6 +102,8 @@ function renderInputs() {
   data.job === ''
     ? (previewJob.innerHTML = 'Front-end developer')
     : (previewJob.innerHTML = data.job);
+
+  setDataInLocalStorage();
 }
 
 //función manejadora guarda valores del input y ejecuta función que pinta
@@ -101,6 +117,7 @@ function handleFill(e) {
 
   //Ejecuto la FUNCIÓN que me pintará en el preview
   renderInputs(data);
+  setDataInLocalStorage(); // Guardar en LocalStorage
 }
 
 //evento de escuchar el formulario entero(Todos los inputs)
@@ -155,6 +172,8 @@ function handler() {
 
   previewHeaderStrip.style.borderColor = colorMedium;
   previewName.style.color = colorDark;
+
+  setDataInLocalStorage();
 }
 
 paletteButtons.forEach((radio) => {
@@ -247,13 +266,15 @@ function writeImage() {
  */
 fileField.addEventListener('change', getImage);
 
-
-
 //------------------------RESETEO-----------------------------//
 
+getDataFromLocalStorage();
+
+/*
 const buttonReset = document.querySelector('.js-card_reset');
 function handleClickReset() {
   location.reload();
 }
 
 buttonReset.addEventListener('click', handleClickReset);
+*/
