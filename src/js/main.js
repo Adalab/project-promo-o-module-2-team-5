@@ -1,105 +1,62 @@
 'use strict';
 
+//-------------------LEGENDS---------------
 
-/*              Sección de elementos que usamos en el HTML             */
-/*  -----------------------------------------------------------------  */
-const legendDesign = document.querySelector('.js-legendDesign');
-const legendFill = document.querySelector('.js-legendFill');
-const legendShare = document.querySelector('.js-legendShare');
+const arrowDesign = document.querySelector('.js-arrowdown-design');
+const arrowFill = document.querySelector('.js-arrowdown-fill');
+const arrowShare = document.querySelector('.js-arrowdown-share');
 
-const sectionDesign = document.querySelector('.js-sectionDesign');
-const sectionFill = document.querySelector('.js-sectionFill');
-const sectionShare = document.querySelector('.js-sectionShare');
+const allLegends = document.querySelectorAll('.js-legend');
 
-/*    Sección de variables globales (que usamos en todo el fichero)    */
-/*  -----------------------------------------------------------------  */
-
-/*                        Sección de funciones                         */
-/*  -----------------------------------------------------------------  */
-
-//DISEÑO (ARROW)
-
-const arrowDownDesign = document.querySelector('.js-arrowdown-design');
-const arrowUpDesign = document.querySelector('.js-arrowup-design');
-const arrowDownFill = document.querySelector('.js-arrowdown-fill');
-const arrowUpFill = document.querySelector('.js-arrowup-fill');
-const arrowDownShare = document.querySelector('.js-arrowdown-share');
-const arrowUpShare = document.querySelector('.js-arrowup-share');
-
-function toggleDropDownMenu() {
-  sectionDesign.classList.toggle('collapsed');
-  arrowDownDesign.classList.toggle('collapsed');
-  arrowUpDesign.classList.toggle('collapsed');
+for (const eachLegend of allLegends) {
+  eachLegend.addEventListener('click', handleClickAnyLegend);
 }
 
-function handleClickDropdown() {
-  toggleDropDownMenu();
-}
+function handleClickAnyLegend(e) {
+  const selectedLegend = e.target.id;
+  console.log('legend clicado --> ' + selectedLegend);
+  const contents = document.querySelectorAll('.js_content');
+  //const arrow = e.target.id.querySelector('.js_arrow');
 
-legendDesign.addEventListener('click', handleClickDropdown);
+  for (const conten of contents) {
+    const idContent = conten.id;
+    console.log('contenidos --> ' + idContent);
+    if (idContent.includes(selectedLegend)) {
+      conten.classList.toggle('collapsed');
+      if (conten.classList.contains('collapsed')) {
+        arrowDesign.classList.remove('fa-chevron-up');
+        arrowDesign.classList.add('fa-chevron-down');
+        arrowFill.classList.remove('fa-chevron-up');
+        arrowFill.classList.add('fa-chevron-down');
+        arrowShare.classList.remove('fa-chevron-up');
+        arrowShare.classList.add('fa-chevron-down');
+      } else {
+        arrowDesign.classList.add('fa-chevron-up');
+        arrowDesign.classList.remove('fa-chevron-down');
+        arrowFill.classList.add('fa-chevron-up');
+        arrowFill.classList.remove('fa-chevron-down');
+        arrowShare.classList.add('fa-chevron-up');
+        arrowShare.classList.remove('fa-chevron-down');
+      }
 
-//FORMULARIO
-function toggleDropDownFill() {
-  sectionFill.classList.toggle('collapsed');
-  arrowDownFill.classList.toggle('collapsed');
-  arrowUpFill.classList.toggle('collapsed');
-}
+      // if (selectedLegend.includes('form')) {
+      //   arrowFill.classList.add('fa-chevron-up');
+      //   arrowFill.classList.remove('fa-chevron-down');
+      //   arrowFill.classList.toggle('fa-chevron-down');
 
-function handleClickDropdownFill() {
-  toggleDropDownFill();
-}
-
-legendFill.addEventListener('click', handleClickDropdownFill);
-
-//SHARE
-function toggleDropDownShare() {
-  sectionShare.classList.toggle('collapsed');
-  arrowDownShare.classList.toggle('collapsed');
-  arrowUpShare.classList.toggle('collapsed');
-}
-
-function handleClickDropdownShare() {
-  toggleDropDownShare();
-}
-
-legendShare.addEventListener('click', handleClickDropdownShare);
-
-/* Sección de eventos (addEventListener y funciones handler asociadas) */
-/*  -----------------------------------------------------------------  */
-
-//----COLAPSABLES (AL ABRIR UNO QUE SE OCULTE EL RESTO)-------
-
-function handleClickLegendDesign() {
-  if (sectionDesign.classList.contains('collapsed')) {
-    sectionFill.classList.toggle('collapsed');
-    sectionShare.classList.toggle('collapsed');
-  } else {
-    sectionFill.classList.add('collapsed');
-    sectionShare.classList.add('collapsed');
+      // arrowFill.classList.toggle('fa-chevron-down');
+      // } else if (selectedLegend.includes('share')) {
+      //   arrowDesign.classList.add('fa-chevron-up');
+      //   arrowDesign.classList.remove('fa-chevron-down');
+      //   arrowFill.classList.remove('fa-chevron-up');
+      //   arrowFill.classList.add('fa-chevron-down');
+      //   arrowShare.classList.remove('fa-chevron-up');
+      //   arrowShare.classList.add('fa-chevron-down');
+    } else {
+      conten.classList.add('collapsed');
+    }
   }
 }
-function handleClickLegendFill() {
-  if (sectionFill.classList.contains('collapsed')) {
-    sectionDesign.classList.toggle('collapsed');
-    sectionShare.classList.toggle('collapsed');
-  } else {
-    sectionDesign.classList.add('collapsed');
-    sectionShare.classList.add('collapsed');
-  }
-}
-function handleClickLegendShare() {
-  if (sectionShare.classList.contains('collapsed')) {
-    sectionDesign.classList.toggle('collapsed');
-    sectionFill.classList.toggle('collapsed');
-  } else {
-    sectionDesign.classList.add('collapsed');
-    sectionFill.classList.add('collapsed');
-  }
-}
-
-legendDesign.addEventListener('click', handleClickLegendDesign);
-legendFill.addEventListener('click', handleClickLegendFill);
-legendShare.addEventListener('click', handleClickLegendShare);
 
 //--------------------RELLENAR EL NOMBRE Y MOSTRAR EN TARJETA-------------
 
@@ -224,11 +181,10 @@ function handleClickButton(e) {
     .then((response) => response.json())
 
     .then((data) => {
-
       if (data.success) {
         createdCardLink.innerHTML = data.cardURL;
         createdCardLink.href = `${data.cardURL}`;
-        const textCardTwitter ='Mira la tarjeta que me he creado!!!';
+        const textCardTwitter = 'Mira la tarjeta que me he creado!!!';
         twitterBtn.href = `https://twitter.com/intent/tweet?text=${textCardTwitter}&url=${data.cardURL}`;
         shareButton.classList.add('buttonCard--off');
         shareButton.classList.remove('buttonCard--on');
@@ -292,14 +248,12 @@ fileField.addEventListener('change', getImage);
 
 //------------------------RESETEO-----------------------------//
 
-
 const buttonReset = document.querySelector('.js-card_reset');
 function handleClickReset() {
   location.reload();
 }
 
 buttonReset.addEventListener('click', handleClickReset);
-
 
 /*
 const buttonReset = document.querySelector('.js-card_reset');
