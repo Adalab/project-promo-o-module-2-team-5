@@ -1,6 +1,5 @@
 'use strict';
 
-
 //-------------------LEGENDS---------------
 
 const arrowDesign = document.querySelector('.js-arrowdown-design');
@@ -267,19 +266,15 @@ function writeImage() {
  */
 fileField.addEventListener('change', getImage);
 
-
-
 //------------------------RESETEO-----------------------------//
 
-<<<<<<< HEAD
 getDataFromLocalStorage();
 
 /*
-=======
->>>>>>> e9c73121f89eb21600d3d55bfe9f740b3a7e3f66
 const buttonReset = document.querySelector('.js-card_reset');
 function handleClickReset() {
   location.reload();
 }
 
 buttonReset.addEventListener('click', handleClickReset);
+*/
