@@ -77,7 +77,7 @@ let data = {
 };
 
 // LocalStorage
-
+/*
 function setDataInLocalStorage() {
   localStorage.setItem('dataSaved', JSON.stringify(data));
 }
@@ -90,7 +90,7 @@ function getDataFromLocalStorage() {
     renderInputs();
     handleFill();
   }
-}
+}*/
 
 //Función para pintar el preview con lo que escribes en el input
 function renderInputs() {
@@ -103,7 +103,7 @@ function renderInputs() {
     ? (previewJob.innerHTML = 'Front-end developer')
     : (previewJob.innerHTML = data.job);
 
-  setDataInLocalStorage();
+  //setDataInLocalStorage();
 }
 
 //función manejadora guarda valores del input y ejecuta función que pinta
@@ -117,7 +117,7 @@ function handleFill(e) {
 
   //Ejecuto la FUNCIÓN que me pintará en el preview
   renderInputs(data);
-  setDataInLocalStorage(); // Guardar en LocalStorage
+  //setDataInLocalStorage(); // Guardar en LocalStorage
 }
 
 //evento de escuchar el formulario entero(Todos los inputs)
@@ -173,7 +173,7 @@ function handler() {
   previewHeaderStrip.style.borderColor = colorMedium;
   previewName.style.color = colorDark;
 
-  setDataInLocalStorage();
+  //setDataInLocalStorage();
 }
 
 paletteButtons.forEach((radio) => {
@@ -268,13 +268,12 @@ fileField.addEventListener('change', getImage);
 
 //------------------------RESETEO-----------------------------//
 
-getDataFromLocalStorage();
+//getDataFromLocalStorage();
 
-/*
 const buttonReset = document.querySelector('.js-card_reset');
 function handleClickReset() {
-  location.reload();
+  
+
 }
 
 buttonReset.addEventListener('click', handleClickReset);
-*/
