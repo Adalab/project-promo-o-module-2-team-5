@@ -5,20 +5,6 @@
 
 ![](https://i.imgur.com/Jwwpqsa.png)
 
-<table>
-  <tr>
-    <td>
-      <img src="./assets/images/MV.png" alt="Mobile version" height="200"/>
-    </td>
-    <td>
-      <img src="./assets/images/TABLET.png" alt="Tablet version" height="200"/>
-    </td>
-    <td>
-      <img src="./design/DESKTOP.jpg" alt="Desktop version" height="200"/>
-    </td>
-  </tr>
-</table>
-
 <h3 align="left">Table of Contents</h3>
 
 1. Introduction
