@@ -74,10 +74,11 @@ let data = {
   linkedin: '',
   github: '',
   palette: '01',
+  photo: '',
 };
 
 // LocalStorage
-/*
+
 function setDataInLocalStorage() {
   localStorage.setItem('dataSaved', JSON.stringify(data));
 }
@@ -88,12 +89,18 @@ function getDataFromLocalStorage() {
     const object = JSON.parse(localStorageData);
     data = object;
     renderInputs();
-    handleFill();
   }
-}*/
+}
 
 //Función para pintar el preview con lo que escribes en el input
 function renderInputs() {
+  if (data.photo !== '') {
+    profileImage.style.backgroundImage = `url(${data.photo})`;
+    profilePreview.style.backgroundImage = `url(${data.photo})`;
+  } else {
+    profileImage.style.backgroundImage = `url("https://www.fillmurray.com/240/200")`;
+    profilePreview.style.backgroundImage ='';
+  }
   //Mantaner en preview los campos rellenos si no hay nada escrito
   data.name === ''
     ? (previewName.innerHTML = 'Nombre Apellido')
@@ -103,7 +110,7 @@ function renderInputs() {
     ? (previewJob.innerHTML = 'Front-end developer')
     : (previewJob.innerHTML = data.job);
 
-  //setDataInLocalStorage();
+  setDataInLocalStorage();
 }
 
 //función manejadora guarda valores del input y ejecuta función que pinta
@@ -117,7 +124,7 @@ function handleFill(e) {
 
   //Ejecuto la FUNCIÓN que me pintará en el preview
   renderInputs(data);
-  //setDataInLocalStorage(); // Guardar en LocalStorage
+  setDataInLocalStorage(); // Guardar en LocalStorage
 }
 
 //evento de escuchar el formulario entero(Todos los inputs)
@@ -173,7 +180,7 @@ function handler() {
   previewHeaderStrip.style.borderColor = colorMedium;
   previewName.style.color = colorDark;
 
-  //setDataInLocalStorage();
+  setDataInLocalStorage();
 }
 
 paletteButtons.forEach((radio) => {
@@ -252,6 +259,7 @@ function writeImage() {
   profileImage.style.backgroundImage = `url(${fr.result})`;
   profilePreview.style.backgroundImage = `url(${fr.result})`;
   data.photo = fr.result;
+  setDataInLocalStorage();
 }
 
 /**
@@ -268,12 +276,30 @@ fileField.addEventListener('change', getImage);
 
 //------------------------RESETEO-----------------------------//
 
-//getDataFromLocalStorage();
+getDataFromLocalStorage();
 
 const buttonReset = document.querySelector('.js-card_reset');
-function handleClickReset() {
-  
 
+function handleClickReset() {
+  document.querySelector('.js-form').reset();
+  data.name = '';
+  data.job = '';
+  data.email = '';
+  data.phone = '';
+  data.linkedin = '';
+  data.github = '';
+  data.photo = '';
+  data.palette = '01';
+
+  for (const eachPalette of paletteButtons) {
+    
+    if (eachPalette.value === 'colours1') {
+      eachPalette.checked = true;
+    } else {
+      eachPalette.checked = false;
+    }
+  }
+  renderInputs();
 }
 
 buttonReset.addEventListener('click', handleClickReset);
