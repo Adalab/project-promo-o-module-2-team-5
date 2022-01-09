@@ -25,6 +25,14 @@ const previewJob = document.querySelector('.js-preview_job');
 //seleccionar formulario
 const form = document.querySelector('.js-form');
 
+//seleccionar inputs formulario
+const fullName = document.querySelector('.js-full_name');
+const job = document.querySelector('.js-job');
+const email = document.querySelector('.js-email');
+const phone = document.querySelector('.js-phone');
+const linkedin = document.querySelector('.js-linkedin');
+const github = document.querySelector('.js-github');
+
 //seleccionar paleta
 const previewHeaderStrip = document.querySelector('.js-card-preview-header');
 const socialMediaIcon = document.querySelectorAll('.socialmedia_icon');
@@ -254,6 +262,14 @@ function getDataFromLocalStorage() {
   if (localStorageData !== null) {
     const object = JSON.parse(localStorageData);
     data = object;
+
+    fullName.value = data.name;
+    job.value = data.job;
+    email.value = data.email;
+    phone.value = data.phone;
+    linkedin.value = data.linkedin;
+    github.value = data.github;
+
     renderInputs();
   }
 }
