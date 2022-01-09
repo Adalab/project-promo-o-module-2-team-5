@@ -284,3 +284,15 @@ function handleClickReset() {
 }
 
 buttonReset.addEventListener('click', handleClickReset);
+
+//Interactive icons in preview
+
+const phoneIcon = document.querySelector('.js-preview_phone');
+const emailIcon = document.querySelector('.js-preview_email');
+const linkedinIcon = document.querySelector('.js-preview_linkedin');
+const githubIcon = document.querySelector('.js-preview_github');
+
+phoneIcon.href = `tel:${data.phone}`;
+emailIcon.href = `mailto:${data.email}`;
+linkedinIcon.href = `${data.linkedin}`;
+githubIcon.href = `https://github.com/${data.github}`;
