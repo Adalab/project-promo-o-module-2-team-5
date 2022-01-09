@@ -1,247 +1,188 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Awesome profile-cards</title>
-    <!--externals -->
-    <script
-      src="https://kit.fontawesome.com/80c9b8179a.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- internals -->
-    <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="icon" href="./assets/images/tarjetas-molonas.png" />
-  </head>
 
-  <body>
-    <header class="headerCard">
-      
-        <img
-          class="imgCard"
-          src="./assets/images/logo-awesome-profile-cards.svg"
-          alt="Awesome profile cards logo"
-        />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Awesome profile-cards</title>
+  <!--externals -->
+  <script src="https://kit.fontawesome.com/80c9b8179a.js" crossorigin="anonymous"></script>
+  <!-- internals -->
+  <link rel="stylesheet" href="./assets/css/main.css" />
+  <link rel="icon" href="./assets/images/image (1).png" />
+</head>
 
-    </header>
+<body>
+  <header class="headerCard">
+    <a href="./index.html">
+      <img class="imgCard" src="./assets/images/logo-awesome-profile-cards.svg" alt="Awesome profile cards logo" />
+    </a>
+  </header>
 
+  <main class="create_card_main">
+    <section class="card_hero">
+      <button class="card_reset js-card_reset">
+        <i class="card_reset__icon far fa-trash-alt"> Reset</i>
+      </button>
 
-    <main class="create_card_main">
-      <section class="card_hero">
-        <button class="card_reset js-card_reset">
-          <i class="card_reset__icon far fa-trash-alt"> Reset</i>
-        </button>
-
-        <div class="card-preview">
-          <div class="card-preview__header js-card-preview-header">
-            <h3 class="card-preview__title js-preview_name">Nombre apellido</h3>
-            <p class="card-preview__subtitle js-preview_job">Front-end developer</p>
-          </div>
-          <div class="card-preview__photo js__profile-image"></div>
-          <nav class="card-preview__nav">
-            <ul class="card__socialmedia">
-              <li class="card__socialmedia--item">
-                <a href="" class="js-preview_phone" alt="mobile">
-                  <i class="socialmedia_icon fas fa-mobile-alt"> </i>
-                </a>
-              </li>
-              <li class="card__socialmedia--item">
-                <a href="mailto:email@email.com" class="js-preview_email" alt="email">
-                  <i class="socialmedia_icon far fa-envelope"></i>
-                </a>
-              </li>
-              <li class="card__socialmedia--item">
-                <a href="" class="js-preview_linkedin" alt="linkedin">
-                  <i class="socialmedia_icon fab fa-linkedin-in"></i>
-                </a>
-              </li>
-              <li class="card__socialmedia--item">
-                <a href="" class="js-preview_github" alt="github">
-                  <i class="socialmedia_icon fab fa-github-alt"></i>
-                </a>
-              </li>
-            </ul>
-          </nav>
+      <div class="card-preview">
+        <div class="card-preview__header js-card-preview-header">
+          <h3 class="card-preview__title js-preview_name">Nombre apellido</h3>
+          <p class="card-preview__subtitle js-preview_job">Front-end developer</p>
         </div>
-      </section>
-      <section class="background_features">
-        <section class="container containerdesign">
-          <section class="design js-legendDesign">
-            <div class="icontitle">
-              <i class="far fa-object-ungroup" alt="icon"></i>
-              <h4 class="designtitle">Diseña</h4>
-            </div>
+        <div class="card-preview__photo js__profile-image"></div>
+        <nav class="card-preview__nav">
+          <ul class="card__socialmedia">
+            <li class="card__socialmedia--item">
+              <a href="" class="js-preview_phone" alt="mobile">
+                <i class="socialmedia_icon fas fa-mobile-alt"> </i>
+              </a>
+            </li>
+            <li class="card__socialmedia--item">
+              <a href="mailto:email@email.com" class="js-preview_email" alt="email">
+                <i class="socialmedia_icon far fa-envelope"></i>
+              </a>
+            </li>
+            <li class="card__socialmedia--item">
+              <a href="" class="js-preview_linkedin" alt="linkedin">
+                <i class="socialmedia_icon fab fa-linkedin-in"></i>
+              </a>
+            </li>
+            <li class="card__socialmedia--item">
+              <a href="" class="js-preview_github" alt="github">
+                <i class="socialmedia_icon fab fa-github-alt"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <section class="background_features">
+      <section class="container containerdesign">
+        <div class="design js-legendDesign js-legend" id="designContent">
+          <div class="icontitle">
+            <i class="far fa-object-ungroup" alt="icon"></i>
+            <h4 class="designtitle">Diseña</h4>
+          </div>
+          <i class="fas fa-chevron-up js-arrowdown-design js_arrows" alt="icon"></i>
+        </div>
 
-            <i class="fas fa-chevron-up js-arrowup-design" alt="icon"></i>
-            <i class="fas fa-chevron-down js-arrowdown-design collapsed" alt="icon"></i>
-          </section>
+        <section class="paletteandcolours js-sectionDesign js_content" id="designContent">
+          <p class="colourstitle">Colores</p>
 
-          <section class="paletteandcolours js-sectionDesign">
-            <p class="colourstitle">Colores</p>
-
-            <section class="colours">
-              <form class="palettes">
-                <input type="radio" value="colours1" id="colours1" name="colourpalette" class="js_colourpalette" checked />
-                <input type="radio" value="colours2" id="colours2" name="colourpalette" class="js_colourpalette" />
-                <input type="radio" value="colours3" id="colours3" name="colourpalette" class="js_colourpalette" />
-              </form>
-              <section class="palettescolours">
-                <ul class="colours1">
-                  <li class="palette1 colour1"></li>
-                  <li class="palette1 colour2"></li>
-                  <li class="palette1 colour3"></li>
-                </ul>
-                <ul class="colours2">
-                  <li class="palette2 colour1"></li>
-                  <li class="palette2 colour2"></li>
-                  <li class="palette2 colour3"></li>
-                </ul>
-                <ul class="colours3">
-                  <li class="palette3 colour1"></li>
-                  <li class="palette3 colour2"></li>
-                  <li class="palette3 colour3"></li>
-                </ul>
-              </section>
+          <section class="colours">
+            <form class="palettes">
+              <input type="radio" value="colours1" id="colours1" name="colourpalette" class="js_colourpalette" checked />
+              <input type="radio" value="colours2" id="colours2" name="colourpalette" class="js_colourpalette" />
+              <input type="radio" value="colours3" id="colours3" name="colourpalette" class="js_colourpalette" />
+            </form>
+            <section class="palettescolours">
+              <ul class="colours1">
+                <li class="palette1 colour1"></li>
+                <li class="palette1 colour2"></li>
+                <li class="palette1 colour3"></li>
+              </ul>
+              <ul class="colours2">
+                <li class="palette2 colour1"></li>
+                <li class="palette2 colour2"></li>
+                <li class="palette2 colour3"></li>
+              </ul>
+              <ul class="colours3">
+                <li class="palette3 colour1"></li>
+                <li class="palette3 colour2"></li>
+                <li class="palette3 colour3"></li>
+              </ul>
             </section>
           </section>
         </section>
-        <section class="section__form container">
-          <div class="section__bar js-legendFill collapsed">
-            <div class="section__bar--icontitle">
-              <i class="far fa-keyboard" alt="icon"></i>
-              <h4 class="section__bar--icontitle--title">Rellena</h4>
-            </div>
-            <i class="fas fa-chevron-down js-arrowdown-fill" alt="icon"></i>
-            <i class="fas fa-chevron-up js-arrowup-fill collapsed" alt="icon"></i>
-          </div>
-
-          <form action="" method="post" class="form js-form">
-            <fieldset>
-              <div class="js-sectionFill collapsed">
-                <label for="name" class="form__label">Nombre completo</label>
-                <input
-                  type="text"
-                  placeholder="Ej: Sally Jill"
-                  name="full_name"
-                  id="name"
-                  class="form__input js-full_name"
-                  value=""
-                  required
-                  pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"
-                />
-                <label for="job" class="form__label">Puesto</label>
-                <input
-                  type="text"
-                  placeholder="Ej: Front-end unicorn"
-                  name="job"
-                  id="job"
-                  class="form__input js-job"
-                  pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"
-                  required
-                />
-
-                <label for="image" class="form__label">Imagen de perfil</label>
-                <div class="form__image-section">
-                  <label
-                    class="form__image-section--add js__profile-trigger"
-                    for="photo"
-                    >Añadir imagen</label
-                  >
-                  <div class="form__image-section--preview js__profile-preview"></div>
-                  <input
-                    type="file"
-                    name="photo"
-                    id="photo"
-                    class="collapsed js__profile-upload-btn"
-                    required
-                  />
-                </div>
-
-                <label for="email" class="form__label">Email</label>
-                <input
-                  type="email"
-                  placeholder="Ej: sally-hill@gmail.com "
-                  name="email"
-                  id="email"
-                  class="form__input js-email"
-                  required
-                />
-
-                <label for="phone" class="form__label">Teléfono</label>
-                <input
-                  type="tel"
-                  placeholder="Ej: 555-55-55-55"
-                  pattern=""
-                  name="phone"
-                  id="phone"
-                  class="form__input js-phone"
-                  required
-                  pattern=" ^(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}"
-                />
-
-                <label for="linkedin" class="form__label">Linkedin</label>
-                <input
-                  type="text"
-                  placeholder="Ej: linkedin.com/in/sally.hill"
-                  name="linkedin"
-                  id="linkedin"
-                  class="form__input js-linkedin"
-                  required
-                />
-                <label for="github" class="form__label">Github</label>
-                <input
-                  type="text"
-                  placeholder="Ej: @sally-hill"
-                  name="github"
-                  id="github"
-                  class="form__input js-github"
-                />
-              </div>
-            </fieldset>
-          </form>
-        </section>
-
-        <section class="container containerShare">
-          <div class="titleShare js-legendShare collapsed">
-            <div class="titleShare__titleIcon">
-              <i class="fas fa-share-alt"></i>
-              <h4 class="titleShare__title">Comparte</h4>
-            </div>
-            <i class="fas fa-chevron-down js-arrowdown-share" alt="icon"></i>
-            <i class="fas fa-chevron-up js-arrowup-share collapsed" alt="icon"></i>
-          </div>
-
-          <div class="containerButton js-sectionShare collapsed">
-            <button class="buttonCard js-buttonCard buttonCard--on">
-              <i class="far fa-address-card"></i>
-              <p class="buttonCard__title">Crear tarjeta</p>
-            </button>
-            <p class="catchError js_catchError "></p>
-
-            <div class="createdCard js-createdCard collapsed">
-              <h5 class="createdCard__title">La tarjeta ha sido creada:</h5>
-              <a class="createdCard__link js_createdCard__link" href="?????"></a>
-              <button class="createdCard__buttonTwitter">
-                <i class="fab fa-twitter"></i>
-                <a class="buttonLink js-buttonLink" href="www.twitter.com" title="twitter">Compartir en Twitter</a>
-              </button>
-            </div>
-          </div>
-        </section>
       </section>
-    </main>
+      <section class="section__form container">
+        <div class="section__bar js-legendFill js-legend" id="formContent">
+          <div class="section__bar--icontitle">
+            <i class="far fa-keyboard" alt="icon"></i>
+            <h4 class="section__bar--icontitle--title">Rellena</h4>
+          </div>
+          <i class="fas fa-chevron-down js-arrowdown-fill js_arrows" alt="icon"></i>
+        </div>
 
-    <footer class="footer">
-      <p class="footer__text">Aweson profile-cards @2021</p>
-      <a href="https://www.adalab.es/" target="_blank">
-        <img
-          class="footer__logo"
-          src="./assets/images/logo-adalab.png"
-          alt="Adalab Logo"
-        />
-      </a>
-    </footer>
+        <form action="" method="post" class="form js-form">
+          <div class="js-sectionFill js_content collapsed" id="formContent">
+            <fieldset>
+              <label for="name" class="form__label">Nombre completo</label>
+              <input type="text" placeholder="Ej: Sally Jill" name="full_name" id="name" class="form__input js-full_name"
+                value="" required
+                pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" />
+              <label for="job" class="form__label">Puesto</label>
+              <input type="text" placeholder="Ej: Front-end unicorn" name="job" id="job" class="form__input js-job"
+                pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"
+                required />
 
-    <script src="./assets/js/main.js"></script>
-  </body>
+              <label for="image" class="form__label">Imagen de perfil</label>
+              <div class="form__image-section">
+                <label class="form__image-section--add js__profile-trigger" for="photo">Añadir imagen</label>
+                <div class="form__image-section--preview js__profile-preview"></div>
+                <input type="file" name="photo" id="photo" class="collapsed js__profile-upload-btn" required />
+              </div>
+
+              <label for="email" class="form__label">Email</label>
+              <input type="email" placeholder="Ej: sally-hill@gmail.com " name="email" id="email" class="form__input js-email"
+                required />
+
+              <label for="phone" class="form__label">Teléfono</label>
+              <input type="tel" placeholder="Ej: 555-55-55-55" pattern="" name="phone" id="phone" class="form__input js-phone"
+                required pattern=" ^(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}" />
+
+              <label for="linkedin" class="form__label">Linkedin</label>
+              <input type="text" placeholder="Ej: linkedin.com/in/sally.hill" name="linkedin" id="linkedin"
+                class="form__input js-linkedin" required />
+              <label for="github" class="form__label">Github</label>
+              <input type="text" placeholder="Ej: @sally-hill" name="github" id="github" class="form__input js-github" />
+            </fieldset>
+          </div>
+
+        </form>
+      </section>
+      <section class="container containerShare">
+        <div class="titleShare js-legendShare js-legend" id="shareContent">
+          <div class="titleShare__titleIcon">
+            <i class="fas fa-share-alt"></i>
+            <h4 class="titleShare__title">Comparte</h4>
+          </div>
+          <i class="fas fa-chevron-down js-arrowdown-share js_arrows" alt="icon"></i>
+        </div>
+
+        <div class="containerButton js-sectionShare js_content collapsed" id="shareContent">
+          <button class="buttonCard js-buttonCard buttonCard--on">
+            <i class="far fa-address-card"></i>
+            <p class="buttonCard__title">Crear tarjeta</p>
+          </button>
+          <p class="catchError js_catchError"></p>
+
+          <div class="createdCard js-createdCard collapsed">
+            <h5 class="createdCard__title">La tarjeta ha sido creada:</h5>
+            <a class="createdCard__link js_createdCard__link" href="?????"></a>
+            <button class="createdCard__buttonTwitter">
+              <i class="fab fa-twitter"></i>
+              <a class="buttonLink js-buttonLink" href="www.twitter.com" title="twitter">Compartir en Twitter</a>
+            </button>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__text">2021: Una Odisea con JavaScript.</p>
+    <a href="https://www.adalab.es/" target="_blank">
+      <img
+        class="footer__logo"
+        src="./assets/images/image (1).png"
+        alt="Adalab Logo"
+      />
+    </a>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+
 </html>
