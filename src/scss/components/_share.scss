@@ -55,14 +55,12 @@
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
     font-family: $principal-font;
 
-    // Estilos buttonCard--on cuando el botón se puede clickar
     &--on {
       border: $iconscolor;
       background-color: $iconscolor;
       cursor: pointer;
     }
 
-    // Estilos buttonCard--off cuando el botón no se puede clickar
     &--off {
       border: #d5d5d5;
       background-color: #d5d5d5;

@@ -5,12 +5,12 @@
   text-align: center;
 
   .imgIndex {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 35px;
+    width: 150px;
+    height: 150px;
+  
   
     @include tablet {
-      width: 150px;
+      width: 250px;
       height: 150px;
     }
     @include desktop {
@@ -30,8 +30,7 @@
   }
 
   .imgCard {
-    width: 80px;
-    height: 80px;
+    width: 120px;
     margin-right: 20px;
   }
 }
@@ -43,6 +42,6 @@
   color: #438792;
 
   @include tablet {
-    font-size: 24p
+    font-size: 24p;
   }
 }
