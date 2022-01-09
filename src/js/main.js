@@ -50,10 +50,33 @@ let data = {
   linkedin: '',
   github: '',
   palette: '01',
+  photo: '',
 };
+
+// LocalStorage
+
+function setDataInLocalStorage() {
+  localStorage.setItem('dataSaved', JSON.stringify(data));
+}
+
+function getDataFromLocalStorage() {
+  const localStorageData = localStorage.getItem('dataSaved');
+  if (localStorageData !== null) {
+    const object = JSON.parse(localStorageData);
+    data = object;
+    renderInputs();
+  }
+}
 
 //Función para pintar el preview con lo que escribes en el input
 function renderInputs() {
+  if (data.photo !== '') {
+    profileImage.style.backgroundImage = `url(${data.photo})`;
+    profilePreview.style.backgroundImage = `url(${data.photo})`;
+  } else {
+    profileImage.style.backgroundImage = `url("https://www.fillmurray.com/240/200")`;
+    profilePreview.style.backgroundImage = '';
+  }
   //Mantaner en preview los campos rellenos si no hay nada escrito
   data.name === ''
     ? (previewName.innerHTML = 'Nombre Apellido')
@@ -62,6 +85,8 @@ function renderInputs() {
   data.job === ''
     ? (previewJob.innerHTML = 'Front-end developer')
     : (previewJob.innerHTML = data.job);
+
+  setDataInLocalStorage();
 }
 
 //función manejadora guarda valores del input y ejecuta función que pinta
@@ -75,6 +100,7 @@ function handleFill(e) {
 
   //Ejecuto la FUNCIÓN que me pintará en el preview
   renderInputs(data);
+  setDataInLocalStorage(); // Guardar en LocalStorage
 }
 
 //evento de escuchar el formulario entero(Todos los inputs)
@@ -129,6 +155,8 @@ function handler() {
 
   previewHeaderStrip.style.borderColor = colorMedium;
   previewName.style.color = colorDark;
+
+  setDataInLocalStorage();
 }
 
 paletteButtons.forEach((radio) => {
@@ -207,6 +235,7 @@ function writeImage() {
   profileImage.style.backgroundImage = `url(${fr.result})`;
   profilePreview.style.backgroundImage = `url(${fr.result})`;
   data.photo = fr.result;
+  setDataInLocalStorage();
 }
 
 /**
@@ -223,90 +252,29 @@ fileField.addEventListener('change', getImage);
 
 //------------------------RESETEO-----------------------------//
 
+getDataFromLocalStorage();
+
 const buttonReset = document.querySelector('.js-card_reset');
+
 function handleClickReset() {
-  location.reload();
+  document.querySelector('.js-form').reset();
+  data.name = '';
+  data.job = '';
+  data.email = '';
+  data.phone = '';
+  data.linkedin = '';
+  data.github = '';
+  data.photo = '';
+  data.palette = '01';
+
+  for (const eachPalette of paletteButtons) {
+    if (eachPalette.value === 'colours1') {
+      eachPalette.checked = true;
+    } else {
+      eachPalette.checked = false;
+    }
+  }
+  renderInputs();
 }
 
 buttonReset.addEventListener('click', handleClickReset);
-
-/*
-const buttonReset = document.querySelector('.js-card_reset');
-const resetName = document.querySelector('.js-full_name');
-const resetJob = document.querySelector('.js-job');
-const resetEmail = document.querySelector('.js-email');
-const resetPhone = document.querySelector('.js-phone');
-const resetLinkedin = document.querySelector('.js-linkedin');
-const resetGithub = document.querySelector('.js-github');
-
-function handleClickReset() {
-  // Resetear data_____________
-  data = {
-    name: '',
-    job: '',
-    email: '',
-    phone: '',
-    linkedin: '',
-    github: '',
-    palette: 'colours1',
-  };
-
-  // Resetear todos los preview a los placeholder______________
-  previewName.innerHTML = 'Nombre Apellido';
-  previewJob.innerHTML = 'Front-end developer';
-  // previewEmail.href = '';
-  // previewPhone.href = '';
-  // previewLinkedin.href = '';
-  // previewGithub.href = '';
-  // previewColourpalette.value = '';
-  previewHeaderStrip.style.borderColor = '#438792';
-  previewName.style.color = '#114e4e';
-  previewJob.style.color = '#000000';
-  for (const eachIcon of socialMediaIcon) {
-    eachIcon.style.color = '#114e4e';
-  }
-  for (const eachCircle of socialMediaCircle) {
-    eachCircle.style.borderColor = '#a2deaf';
-  }
-  profilePreview.style.backgroundImage = '';
-
-  // Resetear el radio button (diseña)_____________________
-  const selectedPalette = document.querySelector(
-    '.js-sectionDesign input[name=colourpalette]:checked'
-  );
-  if (selectedPalette) {
-    selectedPalette.checked = false;
-  }
-
-  // Resetear todos los inputs (rellena)__________________
-  resetName.value = '';
-  resetJob.value = '';
-  resetEmail.value = '';
-  resetPhone.value = '';
-  resetLinkedin.value = '';
-  resetGithub.value = '';
-  fileField.value = '';
-  profileImage.style.backgroundImage = '';
-
-  // Resetear el create card (share)____________________________
-  shareButton.classList.remove('buttonCard--off');
-  shareButton.classList.add('buttonCard--on');
-  createdCard.classList.add('collapsed');
-}
-
-buttonReset.addEventListener('click', handleClickReset);
-
-//------------------------------------------------------------//
-//----DESHABILITAR LINKS ICONOS-------------------------------//
-
-const socialMediaItems = document.querySelectorAll(
-  '.card__socialmedia--item a'
-);
-function handlerSocialMediaItemsClick(event) {
-  event.preventDefault();
-}
-
-socialMediaItems.forEach((a) => {
-  a.addEventListener('click', handlerSocialMediaItemsClick);
-});
-*/
