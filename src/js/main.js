@@ -99,7 +99,7 @@ function renderInputs() {
     profilePreview.style.backgroundImage = `url(${data.photo})`;
   } else {
     profileImage.style.backgroundImage = `url("https://www.fillmurray.com/240/200")`;
-    profilePreview.style.backgroundImage ='';
+    profilePreview.style.backgroundImage = '';
   }
   //Mantaner en preview los campos rellenos si no hay nada escrito
   data.name === ''
@@ -292,7 +292,6 @@ function handleClickReset() {
   data.palette = '01';
 
   for (const eachPalette of paletteButtons) {
-    
     if (eachPalette.value === 'colours1') {
       eachPalette.checked = true;
     } else {
