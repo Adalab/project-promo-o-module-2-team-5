@@ -2,60 +2,35 @@
 
 //-------------------LEGENDS---------------
 
-const arrowDesign = document.querySelector('.js-arrowdown-design');
-const arrowFill = document.querySelector('.js-arrowdown-fill');
-const arrowShare = document.querySelector('.js-arrowdown-share');
-
 const allLegends = document.querySelectorAll('.js-legend');
+const allArrows = document.querySelectorAll('.js_arrows');
 
 for (const eachLegend of allLegends) {
   eachLegend.addEventListener('click', handleClickAnyLegend);
+  eachLegend.addEventListener('click', changeArrows);
 }
 
 function handleClickAnyLegend(e) {
-  const selectedLegend = e.target.id;
-  console.log('legend clicado --> ' + selectedLegend);
+  const selectedLegend = e.currentTarget.id;
   const contents = document.querySelectorAll('.js_content');
-  //const arrow = e.target.id.querySelector('.js_arrow');
 
-  for (const conten of contents) {
-    const idContent = conten.id;
-    console.log('contenidos --> ' + idContent);
-    if (idContent.includes(selectedLegend)) {
-      conten.classList.toggle('collapsed');
-      if (conten.classList.contains('collapsed')) {
-        arrowDesign.classList.remove('fa-chevron-up');
-        arrowDesign.classList.add('fa-chevron-down');
-        arrowFill.classList.remove('fa-chevron-up');
-        arrowFill.classList.add('fa-chevron-down');
-        arrowShare.classList.remove('fa-chevron-up');
-        arrowShare.classList.add('fa-chevron-down');
-      } else {
-        arrowDesign.classList.add('fa-chevron-up');
-        arrowDesign.classList.remove('fa-chevron-down');
-        arrowFill.classList.add('fa-chevron-up');
-        arrowFill.classList.remove('fa-chevron-down');
-        arrowShare.classList.add('fa-chevron-up');
-        arrowShare.classList.remove('fa-chevron-down');
-      }
-
-      // if (selectedLegend.includes('form')) {
-      //   arrowFill.classList.add('fa-chevron-up');
-      //   arrowFill.classList.remove('fa-chevron-down');
-      //   arrowFill.classList.toggle('fa-chevron-down');
-
-      // arrowFill.classList.toggle('fa-chevron-down');
-      // } else if (selectedLegend.includes('share')) {
-      //   arrowDesign.classList.add('fa-chevron-up');
-      //   arrowDesign.classList.remove('fa-chevron-down');
-      //   arrowFill.classList.remove('fa-chevron-up');
-      //   arrowFill.classList.add('fa-chevron-down');
-      //   arrowShare.classList.remove('fa-chevron-up');
-      //   arrowShare.classList.add('fa-chevron-down');
+  for (const content of contents) {
+    const idContent = content.id;
+    if (idContent === selectedLegend) {
+      content.classList.toggle('collapsed');
     } else {
-      conten.classList.add('collapsed');
+      content.classList.add('collapsed');
     }
   }
+}
+
+function changeArrows(event) {
+  for (const eachArrow of allArrows) {
+    eachArrow.classList.remove('fa-chevron-up');
+    eachArrow.classList.add('fa-chevron-down');
+  }
+  const selectedArrow = event.currentTarget;
+  selectedArrow.children[1].classList.add('fa-chevron-up');
 }
 
 //--------------------RELLENAR EL NOMBRE Y MOSTRAR EN TARJETA-------------

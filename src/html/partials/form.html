@@ -1,5 +1,5 @@
 <section class="section__form container">
-  <div class="section__bar js-legendFill collapsed js-legend" id="form">
+  <div class="section__bar js-legendFill js-legend" id="formContent">
     <div class="section__bar--icontitle">
       <i class="far fa-keyboard" alt="icon"></i>
       <h4 class="section__bar--icontitle--title">Rellena</h4>
@@ -9,87 +9,39 @@
   </div>
 
   <form action="" method="post" class="form js-form">
-    <fieldset>
-      <div class="js-sectionFill js_content collapsed" id="formContent">
+    <div class="js-sectionFill js_content collapsed" id="formContent">
+      <fieldset>
         <label for="name" class="form__label">Nombre completo</label>
-        <input
-          type="text"
-          placeholder="Ej: Sally Jill"
-          name="full_name"
-          id="name"
-          class="form__input js-full_name"
-          value=""
-          required
-          pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"
-        />
+        <input type="text" placeholder="Ej: Sally Jill" name="full_name" id="name" class="form__input js-full_name"
+          value="" required
+          pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" />
         <label for="job" class="form__label">Puesto</label>
-        <input
-          type="text"
-          placeholder="Ej: Front-end unicorn"
-          name="job"
-          id="job"
-          class="form__input js-job"
+        <input type="text" placeholder="Ej: Front-end unicorn" name="job" id="job" class="form__input js-job"
           pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"
-          required
-        />
+          required />
 
         <label for="image" class="form__label">Imagen de perfil</label>
         <div class="form__image-section">
-          <label
-            class="form__image-section--add js__profile-trigger"
-            for="photo"
-            >Añadir imagen</label
-          >
+          <label class="form__image-section--add js__profile-trigger" for="photo">Añadir imagen</label>
           <div class="form__image-section--preview js__profile-preview"></div>
-          <input
-            type="file"
-            name="photo"
-            id="photo"
-            class="collapsed js__profile-upload-btn"
-            required
-          />
+          <input type="file" name="photo" id="photo" class="collapsed js__profile-upload-btn" required />
         </div>
 
         <label for="email" class="form__label">Email</label>
-        <input
-          type="email"
-          placeholder="Ej: sally-hill@gmail.com "
-          name="email"
-          id="email"
-          class="form__input js-email"
-          required
-        />
+        <input type="email" placeholder="Ej: sally-hill@gmail.com " name="email" id="email" class="form__input js-email"
+          required />
 
         <label for="phone" class="form__label">Teléfono</label>
-        <input
-          type="tel"
-          placeholder="Ej: 555-55-55-55"
-          pattern=""
-          name="phone"
-          id="phone"
-          class="form__input js-phone"
-          required
-          pattern=" ^(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}"
-        />
+        <input type="tel" placeholder="Ej: 555-55-55-55" pattern="" name="phone" id="phone" class="form__input js-phone"
+          required pattern=" ^(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}" />
 
         <label for="linkedin" class="form__label">Linkedin</label>
-        <input
-          type="text"
-          placeholder="Ej: linkedin.com/in/sally.hill"
-          name="linkedin"
-          id="linkedin"
-          class="form__input js-linkedin"
-          required
-        />
+        <input type="text" placeholder="Ej: linkedin.com/in/sally.hill" name="linkedin" id="linkedin"
+          class="form__input js-linkedin" required />
         <label for="github" class="form__label">Github</label>
-        <input
-          type="text"
-          placeholder="Ej: @sally-hill"
-          name="github"
-          id="github"
-          class="form__input js-github"
-        />
-      </div>
-    </fieldset>
+        <input type="text" placeholder="Ej: @sally-hill" name="github" id="github" class="form__input js-github" />
+      </fieldset>
+    </div>
+
   </form>
 </section>

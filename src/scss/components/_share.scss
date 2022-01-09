@@ -26,7 +26,6 @@
       color: $iconscolor;
       &.fa-share-alt {
         padding-right: 10px;
-
       }
     }
   }
@@ -34,10 +33,6 @@
   & .fa-chevron-down {
     color: $lettercolor;
     font-size: 18px;
-
-    &.collapsed {
-      display: none;
-    }
   }
 }
 
@@ -59,7 +54,6 @@
     border-radius: 20px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
     font-family: $principal-font;
-    
 
     // Estilos buttonCard--on cuando el botón se puede clickar
     &--on {
@@ -92,14 +86,14 @@
     }
   }
 }
-.catchError{
+.catchError {
   font-family: $principal-font;
   color: red;
   margin-top: 45px;
   padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  }
+}
 
 .createdCard {
   display: flex;
@@ -110,11 +104,10 @@
   padding-top: 20px;
   border-top: 1px solid #d8d8d8;
   width: 100%;
-  
 
   &.collapsed {
     display: none;
-    }
+  }
 
   &__title {
     color: $lettercolor;
