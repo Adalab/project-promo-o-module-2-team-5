@@ -18,7 +18,7 @@ let data = {
 const allLegends = document.querySelectorAll('.js-legend');
 const allArrows = document.querySelectorAll('.js_arrows');
 
-//previw de la tarjeta
+//preview de la tarjeta
 const previewName = document.querySelector('.js-preview_name');
 const previewJob = document.querySelector('.js-preview_job');
 
