@@ -1,10 +1,54 @@
 'use strict';
 
-//-------------------LEGENDS---------------
+/////--------------- V A R I A B L E S ---------------//////
 
+//variable global (objeto)
+let data = {
+  name: '',
+  job: '',
+  email: '',
+  phone: '',
+  linkedin: '',
+  github: '',
+  palette: '01',
+  photo: '',
+};
+
+//legend
 const allLegends = document.querySelectorAll('.js-legend');
 const allArrows = document.querySelectorAll('.js_arrows');
 
+//previw de la tarjeta
+const previewName = document.querySelector('.js-preview_name');
+const previewJob = document.querySelector('.js-preview_job');
+
+//seleccionar formulario
+const form = document.querySelector('.js-form');
+
+//seleccionar paleta
+const previewHeaderStrip = document.querySelector('.js-card-preview-header');
+const socialMediaIcon = document.querySelectorAll('.socialmedia_icon');
+const socialMediaCircle = document.querySelectorAll('.card__socialmedia--item');
+
+//crear tarjeta-cambiar color tarjeta-mostrar el resto
+const shareButton = document.querySelector('.js-buttonCard');
+const createdCard = document.querySelector('.js-createdCard');
+const createdCardLink = document.querySelector('.js_createdCard__link');
+const catchError = document.querySelector('.js_catchError');
+const twitterBtn = document.querySelector('.js-buttonLink');
+
+//interactividad imagen
+const fr = new FileReader();
+const fileField = document.querySelector('.js__profile-upload-btn');
+const profileImage = document.querySelector('.js__profile-image');
+const profilePreview = document.querySelector('.js__profile-preview');
+
+//reset
+const buttonReset = document.querySelector('.js-card_reset');
+
+/////--------------- F U N C I O N E S ---------------//////
+
+// --> LEGENDS - COLAPSABLES <-- \\
 for (const eachLegend of allLegends) {
   eachLegend.addEventListener('click', handleClickAnyLegend);
   eachLegend.addEventListener('click', changeArrows);
@@ -33,40 +77,7 @@ function changeArrows(event) {
   selectedArrow.children[1].classList.add('fa-chevron-up');
 }
 
-//--------------------RELLENAR EL NOMBRE Y MOSTRAR EN TARJETA-------------
-
-const previewName = document.querySelector('.js-preview_name');
-const previewJob = document.querySelector('.js-preview_job');
-//
-//selecciono formulario entero
-const form = document.querySelector('.js-form');
-
-//variable global (objeto)
-let data = {
-  name: '',
-  job: '',
-  email: '',
-  phone: '',
-  linkedin: '',
-  github: '',
-  palette: '01',
-  photo: '',
-};
-
-// LocalStorage
-
-function setDataInLocalStorage() {
-  localStorage.setItem('dataSaved', JSON.stringify(data));
-}
-
-function getDataFromLocalStorage() {
-  const localStorageData = localStorage.getItem('dataSaved');
-  if (localStorageData !== null) {
-    const object = JSON.parse(localStorageData);
-    data = object;
-    renderInputs();
-  }
-}
+// --> RELLENAR EL NOMBRE Y MOSTRAR EN TARJETA <-- \\
 
 //Función para pintar el preview con lo que escribes en el input
 function renderInputs() {
@@ -106,13 +117,7 @@ function handleFill(e) {
 //evento de escuchar el formulario entero(Todos los inputs)
 form.addEventListener('keyup', handleFill);
 
-//----------------------------------------------------------------------//
-//----------------PARA SELECCIONAR LA PALETA----------------------------//
-
-const previewHeaderStrip = document.querySelector('.js-card-preview-header');
-const socialMediaIcon = document.querySelectorAll('.socialmedia_icon');
-const socialMediaCircle = document.querySelectorAll('.card__socialmedia--item');
-//aqui tendrian que ir mas const pero como reutilizo las que ya están declaradas arriba solo pongo esta.
+// --> SELECCIONAR LA PALETA<-- \\
 
 //seleciono el atributo comun para poder coger todos los radiobuttons
 const paletteButtons = document.querySelectorAll(
@@ -163,14 +168,7 @@ paletteButtons.forEach((radio) => {
   radio.addEventListener('change', handler);
 });
 
-//----------------------------------------------------------------------//
-//---PARA SELECCIONAR CREAR TARJETA (CAMBIO COLOR y MOSTRAR EL RESTO---//
-
-const shareButton = document.querySelector('.js-buttonCard');
-const createdCard = document.querySelector('.js-createdCard');
-const createdCardLink = document.querySelector('.js_createdCard__link');
-const catchError = document.querySelector('.js_catchError');
-const twitterBtn = document.querySelector('.js-buttonLink');
+// --> CREAR TARJETA - CAMBIAR COLOR - MOSTRAR EL RESTO<-- \\
 
 function handleClickButton(e) {
   e.preventDefault();
@@ -201,12 +199,7 @@ function handleClickButton(e) {
 
 shareButton.addEventListener('click', handleClickButton);
 
-//--------------------- interactividad imagen -----------------------//
-
-const fr = new FileReader();
-const fileField = document.querySelector('.js__profile-upload-btn');
-const profileImage = document.querySelector('.js__profile-image');
-const profilePreview = document.querySelector('.js__profile-preview');
+// --> INTERACTIVIDAD IMAGEN<-- \\
 
 /**
  * Recoge el archivo añadido al campo de tipo "file"
@@ -250,11 +243,24 @@ function writeImage() {
  */
 fileField.addEventListener('change', getImage);
 
-//------------------------RESETEO-----------------------------//
+// --> LOCALSTORAGE:
+
+function setDataInLocalStorage() {
+  localStorage.setItem('dataSaved', JSON.stringify(data));
+}
+
+function getDataFromLocalStorage() {
+  const localStorageData = localStorage.getItem('dataSaved');
+  if (localStorageData !== null) {
+    const object = JSON.parse(localStorageData);
+    data = object;
+    renderInputs();
+  }
+}
+
+// --> RESET:
 
 getDataFromLocalStorage();
-
-const buttonReset = document.querySelector('.js-card_reset');
 
 function handleClickReset() {
   document.querySelector('.js-form').reset();
