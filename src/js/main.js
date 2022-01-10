@@ -193,8 +193,10 @@ function handleClickButton(e) {
       if (data.success) {
         createdCardLink.innerHTML = data.cardURL;
         createdCardLink.href = `${data.cardURL}`;
+        createdCardLink.target = '_blank';
         const textCardTwitter = 'Mira la tarjeta que me he creado!!!';
         twitterBtn.href = `https://twitter.com/intent/tweet?text=${textCardTwitter}&url=${data.cardURL}`;
+        twitterBtn.target = '_blank';
         shareButton.classList.add('buttonCard--off');
         shareButton.classList.remove('buttonCard--on');
         createdCard.classList.remove('collapsed');
@@ -311,4 +313,6 @@ const githubIcon = document.querySelector('.js-preview_github');
 phoneIcon.href = `tel:${data.phone}`;
 emailIcon.href = `mailto:${data.email}`;
 linkedinIcon.href = `${data.linkedin}`;
+linkedinIcon.target = '_blank';
 githubIcon.href = `https://github.com/${data.github}`;
+githubIcon.target = '_blank';
