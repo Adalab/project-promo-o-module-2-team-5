@@ -125,6 +125,21 @@ function handleFill(e) {
 //evento de escuchar el formulario entero(Todos los inputs)
 form.addEventListener('keyup', handleFill);
 
+//Interactive icons in preview
+
+const phoneIcon = document.querySelector('.js-preview_phone');
+const emailIcon = document.querySelector('.js-preview_email');
+const linkedinIcon = document.querySelector('.js-preview_linkedin');
+const githubIcon = document.querySelector('.js-preview_github');
+
+phoneIcon.href = `tel:${data.phone}`;
+emailIcon.href = `mailto:${data.email}`;
+linkedinIcon.href = `${data.linkedin}`;
+linkedinIcon.target = '_blank';
+githubIcon.href = `https://github.com/${data.github}`;
+githubIcon.target = '_blank';
+
+
 // --> SELECCIONAR LA PALETA<-- \\
 
 //seleciono el atributo comun para poder coger todos los radiobuttons
@@ -303,16 +318,5 @@ function handleClickReset() {
 
 buttonReset.addEventListener('click', handleClickReset);
 
-//Interactive icons in preview
 
-const phoneIcon = document.querySelector('.js-preview_phone');
-const emailIcon = document.querySelector('.js-preview_email');
-const linkedinIcon = document.querySelector('.js-preview_linkedin');
-const githubIcon = document.querySelector('.js-preview_github');
 
-phoneIcon.href = `tel:${data.phone}`;
-emailIcon.href = `mailto:${data.email}`;
-linkedinIcon.href = `${data.linkedin}`;
-linkedinIcon.target = '_blank';
-githubIcon.href = `https://github.com/${data.github}`;
-githubIcon.target = '_blank';
