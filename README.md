@@ -174,7 +174,7 @@ For project management, we will use user stories, a tool to define the character
 -Photo update in card preview, using provided component
 -Add the functionality to share on Twitter, first sending the data to the server to obtain the URL to share
 
-**4.    Quarter. Offline version**
+**4.    Fourth. Offline version**
 -Have content stored in the browser's LocalStorage
 </p>
 
